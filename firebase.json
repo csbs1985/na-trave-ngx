@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/na-trave-ngx",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
