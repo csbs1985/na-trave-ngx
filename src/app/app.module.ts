@@ -3,27 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
-import { ComponentsModule } from './components/components/components.module';
-import { InterfacesModule } from './interfaces/interfaces/interfaces.module';
-import { ServicesModule } from './services/services/services.module';
-import { PartidaComponent } from './partida/partida.component';
-import { SelecionarEquipeComponent } from './selecionar-equipe/selecionar-equipe.component';
-import { PlacarComponent } from './placar/placar.component';
-
+import { DefinirModule } from './definir/definir.module';
+import { PartidaModule } from './partida/partida.module';
+import { PlacarModule } from './placar/placar.module';
+import { PrincipalModule } from './principal/principal.module';
+import { SelecionarEquipeModule } from './selecionar-equipe/selecionar-equipe.module';
+import { SharedModule } from './shared/shared.module';
+import { SplashScreenModule } from './splash-screen/splash-screen.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PartidaComponent,
-    SelecionarEquipeComponent,
-    PlacarComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    ComponentsModule,
-    InterfacesModule,
-    ServicesModule
+    PartidaModule,
+    PlacarModule,
+    SelecionarEquipeModule,
+    PrincipalModule,
+    DefinirModule,
+    SplashScreenModule
   ],
   providers: [],
   bootstrap: [AppComponent]
