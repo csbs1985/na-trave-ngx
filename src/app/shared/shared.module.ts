@@ -15,5 +15,6 @@ import { ModelsModule } from './models/models.module';
     ServicesModule,
     EnumModule,
     ModelsModule
+  ]
 })
 export class SharedModule { }
