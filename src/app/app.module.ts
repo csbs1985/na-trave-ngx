@@ -6,11 +6,17 @@ import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components/components.module';
 import { InterfacesModule } from './interfaces/interfaces/interfaces.module';
 import { ServicesModule } from './services/services/services.module';
+import { PartidaComponent } from './partida/partida.component';
+import { SelecionarEquipeComponent } from './selecionar-equipe/selecionar-equipe.component';
+import { PlacarComponent } from './placar/placar.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PartidaComponent,
+    SelecionarEquipeComponent,
+    PlacarComponent
   ],
   imports: [
     BrowserModule,
