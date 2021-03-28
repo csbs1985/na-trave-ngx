@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { SelecionarEquipeComponent } from './selecionar-equipe.component';
 
 @NgModule({
@@ -10,7 +11,8 @@ import { SelecionarEquipeComponent } from './selecionar-equipe.component';
     SelecionarEquipeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class SelecionarEquipeModule { }

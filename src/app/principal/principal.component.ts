@@ -12,4 +12,7 @@ export class PrincipalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selecionarModo(tipo) {
+    console.log(tipo);
+  }
 }
