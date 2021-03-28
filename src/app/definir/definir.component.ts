@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-definir',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./definir.component.css']
 })
 export class DefinirComponent implements OnInit {
+  pagina: string;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.pagina = this.route.snapshot.paramMap.get('pagina');
+    console.log(this.pagina);
   }
-
 }

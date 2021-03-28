@@ -8,13 +8,13 @@ import { PrincipalComponent } from './principal/principal.component';
 import { SelecionarEquipeComponent } from './selecionar-equipe/selecionar-equipe.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: "/principal", pathMatch: "full" },
-  { path: "principal", component: PrincipalComponent },
-  { path: "partida", component: PartidaComponent },
-  { path: "placar", component: PlacarComponent },
-  { path: "selecionar-equipe", component: SelecionarEquipeComponent },
-  { path: "definir", component: DefinirComponent },
-  { path: "*", component: PrincipalComponent }
+  { path: '', redirectTo: '/principal', pathMatch: 'full' },
+  { path: 'principal', component: PrincipalComponent },
+  { path: 'principal/:pagina', component: DefinirComponent },
+  { path: 'partida', component: PartidaComponent },
+  { path: 'placar', component: PlacarComponent },
+  { path: 'selecionar-equipe', component: SelecionarEquipeComponent },
+  { path: '*', component: PrincipalComponent }
 ];
 
 @NgModule({
@@ -25,3 +25,10 @@ const routes: Routes = [
   ]
 })
 export class AppRoutingModule { }
+export const routingComponents = [
+  PrincipalComponent,
+  DefinirComponent,
+  PartidaComponent,
+  PlacarComponent,
+  SelecionarEquipeComponent
+]
