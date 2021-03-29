@@ -11,7 +11,6 @@ import { PlacarModule } from './placar/placar.module';
 import { PrincipalModule } from './principal/principal.module';
 import { SelecionarEquipeModule } from './selecionar-equipe/selecionar-equipe.module';
 import { SharedModule } from './shared/shared.module';
-import { SplashScreenModule } from './splash-screen/splash-screen.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,6 @@ import { SplashScreenModule } from './splash-screen/splash-screen.module';
     SelecionarEquipeModule,
     PrincipalModule,
     DefinirModule,
-    SplashScreenModule,
     AppRoutingModule,
     RouterModule
   ],
