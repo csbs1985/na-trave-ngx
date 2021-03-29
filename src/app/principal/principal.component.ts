@@ -15,7 +15,8 @@ export class PrincipalComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  selecionarPagina(pagina) {
+  /* tslint:disable:typedef */
+  selecionarPagina(pagina: string) {
     this.route.navigate(['/' + TipoRoute.PRINCIPAL, pagina]);
   }
 }
