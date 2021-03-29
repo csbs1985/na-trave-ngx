@@ -7,14 +7,14 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./definir.component.css']
 })
 export class DefinirComponent implements OnInit {
-  pagina: string;
+  paginaSelecionada: string;
+  readonly pagina = 'pagina';
 
   constructor(
     private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.pagina = this.route.snapshot.paramMap.get('pagina');
-    console.log(this.pagina);
+    this.paginaSelecionada = (this.route.snapshot.paramMap.get(this.pagina));
   }
 }

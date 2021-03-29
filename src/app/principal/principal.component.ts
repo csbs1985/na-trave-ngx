@@ -16,6 +16,6 @@ export class PrincipalComponent implements OnInit {
   ngOnInit(): void { }
 
   selecionarPagina(pagina) {
-    this.route.navigate(['/' + TipoRoute.DEFINIR, pagina]);
+    this.route.navigate(['/' + TipoRoute.PRINCIPAL, pagina]);
   }
 }
