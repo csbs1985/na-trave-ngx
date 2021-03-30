@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-definir',
   templateUrl: './definir.component.html',
-  styleUrls: ['./definir.component.css']
+  styleUrls: ['./definir.component.scss']
 })
 export class DefinirComponent implements OnInit {
   paginaSelecionada: string;

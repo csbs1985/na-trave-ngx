@@ -5,7 +5,7 @@ import { TipoRoute } from '../shared/enum/tipo-route.enum';
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
-  styleUrls: ['./principal.component.css']
+  styleUrls: ['./principal.component.scss']
 })
 export class PrincipalComponent implements OnInit {
 
