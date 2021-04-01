@@ -1,13 +1,3 @@
-<!-- <p>v. 24</p>
-<img
-  src="../assets/images/drawable-xxxhdpi/principal.png"
-  alt=""
-  style="background-size: cover;"
->
-<button (click)="selecionarPagina('partida')">Partida</button>
-<button (click)="selecionarPagina('placar')">Placar</button>
-<button (click)="selecionarPagina('selecionar-equipe')">Selecionar Equipe</button> -->
-
 <section>
   <div class="cabecalho">
     <img
@@ -19,19 +9,14 @@
   <menu>
     <ul *ngFor="let item of menu">
       <li>
-        <a (click)="selecionarPagina(item)">
-
+        <a
+          class="button"
+          (click)="selecionarPagina(item.link)"
+        >
           <div class="bottom"></div>
 
           <div class="top">
-
-            <div class="label">{{ item }}</div>
-
-            <div class="button-border button-border-left"></div>
-            <div class="button-border button-border-top"></div>
-            <div class="button-border button-border-right"></div>
-            <div class="button-border button-border-bottom"></div>
-
+            {{ item.label }}
           </div>
         </a>
       </li>

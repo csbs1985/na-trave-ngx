@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { TipoRoute } from '../shared/enum/tipo-route.enum';
 
@@ -7,20 +7,25 @@ import { TipoRoute } from '../shared/enum/tipo-route.enum';
   templateUrl: './principal.component.html',
   styleUrls: ['./principal.component.scss']
 })
-export class PrincipalComponent implements OnInit {
-  menu = {}
+export class PrincipalComponent {
+  menu = [
+    {
+      link: 'placar',
+      label: 'placar'
+    },
+    {
+      link: 'selecionar-equipe',
+      label: 'selecionar equipe'
+    },
+    {
+      link: 'partida',
+      label: 'partida'
+    }
+  ];
 
   constructor(
     private route: Router
   ) { }
-
-  ngOnInit(): void {
-    this.menu = [
-      'placar',
-      'selecionar-equipe',
-      'partida'
-    ]
-  }
 
   /* tslint:disable:typedef */
   selecionarPagina(pagina: string) {

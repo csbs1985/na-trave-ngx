@@ -14,19 +14,16 @@ section {
   }
 
   menu {
-    bottom: 0;
+    bottom: 26px;
     position: absolute;
     z-index: 2;
 
     ul>li {
-      background-color: $cor-base;
       display: inline-block;
       margin: 0 0 $tamanho-m $tamanho-m;
       padding: 0 $tamanho-m;
 
       a {
-        background-color: $cor-base;
-        line-height: $tamanho-g;
         text-transform: uppercase;
       }
     }
