@@ -1,0 +1,43 @@
+@import '../../sass/styles.scss';
+
+section {
+  background-color: black;
+  background-image: url('../../assets/images/banner.jpg');
+  background-size: cover;
+  height: 100%;
+  position: relative;
+
+  .cabecalho {
+    background-color: $cor-base;
+    padding: $tamanho-m;
+    width: calc(100% - $tamanho-m);
+  }
+
+  menu {
+    bottom: 0;
+    position: absolute;
+    z-index: 2;
+
+    ul>li {
+      background-color: $cor-base;
+      display: inline-block;
+      margin: 0 0 $tamanho-m $tamanho-m;
+      padding: 0 $tamanho-m;
+
+      a {
+        background-color: $cor-base;
+        line-height: $tamanho-g;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.rodape {
+  background-color: $cor-primario;
+  bottom: 0;
+  height: 100px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
