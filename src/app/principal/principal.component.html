@@ -1,4 +1,4 @@
-<p>v. 2</p>
+<!-- <p>v. 24</p>
 <img
   src="../assets/images/drawable-xxxhdpi/principal.png"
   alt=""
@@ -6,4 +6,37 @@
 >
 <button (click)="selecionarPagina('partida')">Partida</button>
 <button (click)="selecionarPagina('placar')">Placar</button>
-<button (click)="selecionarPagina('selecionar-equipe')">Selecionar Equipe</button>
+<button (click)="selecionarPagina('selecionar-equipe')">Selecionar Equipe</button> -->
+
+<section>
+  <div class="cabecalho">
+    <img
+      src="../../assets/svg/logo.svg"
+      alt="na trave"
+    >
+  </div>
+
+  <menu>
+    <ul *ngFor="let item of menu">
+      <li>
+        <a (click)="selecionarPagina(item)">
+
+          <div class="bottom"></div>
+
+          <div class="top">
+
+            <div class="label">{{ item }}</div>
+
+            <div class="button-border button-border-left"></div>
+            <div class="button-border button-border-top"></div>
+            <div class="button-border button-border-right"></div>
+            <div class="button-border button-border-bottom"></div>
+
+          </div>
+        </a>
+      </li>
+    </ul>
+  </menu>
+
+  <div class="rodape"></div>
+</section>

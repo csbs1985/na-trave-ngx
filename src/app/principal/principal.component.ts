@@ -8,12 +8,19 @@ import { TipoRoute } from '../shared/enum/tipo-route.enum';
   styleUrls: ['./principal.component.scss']
 })
 export class PrincipalComponent implements OnInit {
+  menu = {}
 
   constructor(
     private route: Router
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.menu = [
+      'placar',
+      'selecionar-equipe',
+      'partida'
+    ]
+  }
 
   /* tslint:disable:typedef */
   selecionarPagina(pagina: string) {
