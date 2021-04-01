@@ -11,15 +11,15 @@ export class PrincipalComponent {
   menu = [
     {
       link: 'placar',
-      label: 'placar'
+      label: 'placar e cronômetro'
     },
     {
       link: 'selecionar-equipe',
-      label: 'selecionar equipe'
+      label: 'selecionar times'
     },
     {
       link: 'partida',
-      label: 'partida'
+      label: 'grenciar partida'
     }
   ];
 
