@@ -1,3 +1,18 @@
-<p>definir works!</p>
+<!-- <p>definir works!</p>
 <button routerLink="/{{paginaSelecionada}}">{{paginaSelecionada}}</button>
-<button routerLink="/principal">principal</button>
+<button routerLink="/principal">principal</button> -->
+
+<section>
+  <div class="definir">
+    <div class="rodape botao-duplo">
+      <app-botao-voltar class="botao"></app-botao-voltar>
+
+      <app-botao
+        class="botao"
+        [rotaBotao]="paginaSelecionada"
+        [textoBotao]="paginaSelecionada"
+        (cliqueBotao)="selecionarPagina($event)"
+      ></app-botao>
+    </div>
+  </div>
+</section>

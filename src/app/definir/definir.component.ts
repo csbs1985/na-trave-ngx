@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TipoRoute } from '../shared/enum/tipo-route.enum';
 
 @Component({
   selector: 'app-definir',
@@ -11,10 +12,15 @@ export class DefinirComponent implements OnInit {
   readonly pagina = 'pagina';
 
   constructor(
-    private route: ActivatedRoute
+    private route: Router,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.paginaSelecionada = (this.route.snapshot.paramMap.get(this.pagina));
+    this.paginaSelecionada = (this.activatedRoute.snapshot.paramMap.get(this.pagina));
+  }
+
+  selecionarPagina(pagina: string) {
+    this.route.navigate(['/' + TipoRoute.PRINCIPAL, pagina]);
   }
 }

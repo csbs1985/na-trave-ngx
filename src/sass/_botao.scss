@@ -40,3 +40,15 @@
     width: calc(100% - 20px);
   }
 }
+
+.botao-duplo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  button {
+    align-self: flex-start;
+    flex: 1 1 auto;
+    margin-right: $tamanho-m;
+  }
+}
