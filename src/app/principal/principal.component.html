@@ -7,20 +7,14 @@
   </div>
 
   <menu>
-    <ul *ngFor="let item of menu">
-      <li>
-        <a
-          class="button"
-          (click)="selecionarPagina(item.link)"
-        >
-          <div class="bottom"></div>
-
-          <div class="top">
-            {{ item.label }}
-          </div>
-        </a>
-      </li>
-    </ul>
+    <div *ngFor="let item of menuPrincipal">
+      <app-botao
+        class="botao"
+        [rotaBotao]="item.rota"
+        [textoBotao]="item.texto"
+        (cliqueBotao)="selecionarPagina($event)"
+      ></app-botao>
+    </div>
   </menu>
 
   <div class="rodape"></div>

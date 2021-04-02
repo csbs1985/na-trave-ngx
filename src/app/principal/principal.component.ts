@@ -8,18 +8,18 @@ import { TipoRoute } from '../shared/enum/tipo-route.enum';
   styleUrls: ['./principal.component.scss']
 })
 export class PrincipalComponent {
-  menu = [
+  menuPrincipal = [
     {
-      link: 'placar',
-      label: 'placar e cronômetro'
+      rota: 'placar',
+      texto: 'placar e cronômetro'
     },
     {
-      link: 'selecionar-equipe',
-      label: 'selecionar times'
+      rota: 'selecionar-equipe',
+      texto: 'selecionar times'
     },
     {
-      link: 'partida',
-      label: 'grenciar partida'
+      rota: 'partida',
+      texto: 'gerenciar partida'
     }
   ];
 

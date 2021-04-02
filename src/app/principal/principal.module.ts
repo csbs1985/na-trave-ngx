@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ComponentsModule } from '../shared/components/components.module';
 import { PrincipalComponent } from './principal.component';
 
 @NgModule({
@@ -8,7 +9,9 @@ import { PrincipalComponent } from './principal.component';
   exports: [PrincipalComponent],
   imports: [
     CommonModule,
-    RouterModule
-  ]
+    RouterModule,
+    ComponentsModule
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PrincipalModule { }
