@@ -2,8 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-botao',
-  templateUrl: './botao.component.html',
-  styleUrls: ['./botao.component.scss']
+  templateUrl: './botao.component.html'
 })
 export class BotaoComponent {
 

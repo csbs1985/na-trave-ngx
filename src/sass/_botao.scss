@@ -1,37 +1,39 @@
-@import './variables';
-
-.button {
-  display: inline-block;
-  text-decoration: none;
+.botao {
   position: relative;
+
+  button {
+    background-color: $cor-primario;
+    border: 0;
+    color: $cor-base;
+    display: inline-block;
+    line-height: $tamanho-g;
+    margin: 0 0 $tamanho-m $tamanho-m;
+    padding: 0 $tamanho-m;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    word-spacing: 5px;
+
+    .borda-botao {
+      display: none;
+    }
+  }
 }
 
-.bottom {
-  position: absolute;
-  left: -3px;
-  top: -3px;
-  width: 100%;
-  height: 100%;
-  background-color: $cor-base;
-  display: block;
-  -webkit-transition: all .15s ease-out;
-  -moz-transition: all .15s ease-out;
-  -o-transition: all .15s ease-out;
-  transition: all .15s ease-out;
-}
+.botao-secundario {
+  button {
+    background-color: $cor-base;
+    color: $cor-primario;
+  }
 
-.top {
-  position: relative;
-  left: 0;
-  top: 0;
-  height: 100%;
-  padding: 0px $tamanho-m;
-  line-height: $tamanho-g;
-  border: 1px solid $cor-base;
-}
-
-.top:active {
-  left: -3;
-  top: -3;
-  background-color: $cor-base;
+  .borda-botao {
+    background-color: transparent;
+    border: 1px solid $cor-base;
+    border-width: 1px;
+    height: 40px;
+    left: 23px;
+    position: absolute;
+    top: -9px;
+    width: calc(100% - 20px);
+  }
 }

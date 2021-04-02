@@ -9,7 +9,7 @@
   <menu>
     <div *ngFor="let item of menuPrincipal">
       <app-botao
-        class="botao"
+        class="botao botao-secundario"
         [rotaBotao]="item.rota"
         [textoBotao]="item.texto"
         (cliqueBotao)="selecionarPagina($event)"
