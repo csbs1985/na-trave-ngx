@@ -1,11 +1,13 @@
 .botao {
   position: relative;
+  font-family: 'adineue-regular';
 
   button {
     background-color: $cor-primario;
     border: 0;
     color: $cor-base;
     display: inline-block;
+    font-family: 'adineue-regular';
     line-height: $tamanho-g;
     margin: 0 0 $tamanho-m $tamanho-m;
     padding: 0 $tamanho-m;
@@ -31,9 +33,9 @@
     border: 1px solid $cor-base;
     border-width: 1px;
     height: 40px;
-    left: 23px;
+    left: 22px;
     position: absolute;
-    top: -9px;
+    top: -10px;
     width: calc(100% - 20px);
   }
 }
