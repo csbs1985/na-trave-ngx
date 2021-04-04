@@ -8,7 +8,9 @@ import { TipoRoute } from '../shared/enum/tipo-route.enum';
   styleUrls: ['./definir.component.scss']
 })
 export class DefinirComponent implements OnInit {
-  paginaSelecionada: string;
+  rotaBotao: string;
+  textoBotao: string;
+  readonly textoCabecalho = 'Definição e configuração';
   readonly pagina = 'pagina';
 
   constructor(
@@ -17,10 +19,26 @@ export class DefinirComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.paginaSelecionada = (this.activatedRoute.snapshot.paramMap.get(this.pagina));
+    this.iniciarPagina();
   }
 
-  selecionarPagina(pagina: string) {
+  iniciarPagina(): void {
+    this.rotaBotao = (this.activatedRoute.snapshot.paramMap.get(this.pagina));
+
+    switch (this.rotaBotao) {
+      case TipoRoute.PARTIDA:
+        this.textoBotao = 'partida';
+        break;
+      case TipoRoute.PLACAR:
+        this.textoBotao = 'placar';
+        break;
+      case TipoRoute.SELECIONAR_EQUIPE:
+        this.textoBotao = 'selecionar equipe';
+        break;
+    }
+  }
+
+  selecionarPagina(pagina: string): void {
     this.route.navigate(['/' + TipoRoute.PRINCIPAL, pagina]);
   }
 }

@@ -6,14 +6,13 @@ import { Component } from '@angular/core';
   templateUrl: './botao-voltar.component.html'
 })
 export class BotaoVoltarComponent {
-
   readonly voltar = 'voltar';
 
   constructor(
-    private _location: Location
+    private location: Location
   ) { }
 
-  selecionarBotao() {
-    this._location.back();
+  selecionarBotao(): void {
+    this.location.back();
   }
 }

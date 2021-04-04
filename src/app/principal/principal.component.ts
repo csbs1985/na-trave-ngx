@@ -27,8 +27,7 @@ export class PrincipalComponent {
     private route: Router
   ) { }
 
-  /* tslint:disable:typedef */
-  selecionarPagina(pagina: string) {
+  selecionarPagina(pagina: string): void {
     this.route.navigate(['/' + TipoRoute.PRINCIPAL, pagina]);
   }
 }

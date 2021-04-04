@@ -5,7 +5,9 @@ import { ComponentsModule } from '../shared/components/components.module';
 import { DefinirComponent } from './definir.component';
 
 @NgModule({
-  declarations: [DefinirComponent],
+  declarations: [
+    DefinirComponent
+  ],
   exports: [DefinirComponent],
   imports: [
     CommonModule,
