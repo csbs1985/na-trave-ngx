@@ -10,6 +10,12 @@ import { TipoRoute } from '../shared/enum/tipo-route.enum';
 export class DefinirComponent implements OnInit {
   rotaBotao: string;
   textoBotao: string;
+
+  isPartida = false;
+  isPlacar = false;
+  isConfirmar = true;
+  isSelecionarEquipes = false;
+
   readonly textoCabecalho = 'Definição ajustes';
   readonly pagina = 'pagina';
 
@@ -28,17 +34,26 @@ export class DefinirComponent implements OnInit {
     switch (this.rotaBotao) {
       case TipoRoute.PARTIDA:
         this.textoBotao = 'partida';
+        this.isPartida = true;
         break;
       case TipoRoute.PLACAR:
         this.textoBotao = 'placar';
+        this.isPlacar = true;
         break;
       case TipoRoute.SELECIONAR_EQUIPE:
         this.textoBotao = 'selecionar equipe';
+        this.isSelecionarEquipes = true;
+        this.isConfirmar = false;
         break;
     }
   }
 
   selecionarPagina(pagina: string): void {
     this.route.navigate(['/' + pagina]);
+  }
+
+  esporteSelecionado(esporte: string): void {
+    console.log(esporte);
+    this.isSelecionarEquipes = false;
   }
 }

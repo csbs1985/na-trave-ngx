@@ -1,0 +1,12 @@
+<div
+  class="selecionar-esporte"
+  *ngFor="let item of esportes"
+>
+  <div
+    class="selecionar-esporte-item"
+    [style.background-image]="'url('+item.imagem+')'"
+    (click)="selecionarEsporte(item.tipoEsporte)"
+  >
+    <p>{{ item.tipoEsporte }}</p>
+  </div>
+</div>

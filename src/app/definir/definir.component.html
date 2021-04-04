@@ -2,10 +2,18 @@
   <div class="definir">
     <app-cabecalho [textoCabecalho]="textoCabecalho"></app-cabecalho>
 
+    <div class="definir-conteudo">
+      <app-selecionar-esporte
+        *ngIf="isSelecionarEquipes"
+        (esporteSelecionado)="esporteSelecionado($event)"
+      ></app-selecionar-esporte>
+    </div>
+
     <div class="definir-rodape botao-duplo">
       <app-botao-voltar class="botao"></app-botao-voltar>
 
       <app-botao
+        *ngIf="isConfirmar"
         class="botao"
         [rotaBotao]="rotaBotao"
         [textoBotao]="textoBotao"

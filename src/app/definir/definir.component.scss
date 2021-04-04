@@ -5,7 +5,10 @@
   position: absolute;
   width: 100%;
 
+  &-conteudo {}
+
   &-rodape {
+    background-color: $cor-base;
     bottom: 0;
     position: absolute;
     width: 100%;

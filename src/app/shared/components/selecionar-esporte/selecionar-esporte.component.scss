@@ -1,0 +1,29 @@
+@import '../../../../sass/styles.scss';
+
+.selecionar-esporte {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 140px;
+  justify-content: flex-start;
+  width: 100%;
+
+  &-item {
+    background-size: cover;
+    flex: 1 1 auto;
+    position: relative;
+    width: 100%;
+
+    p {
+      color: $cor-base;
+      font-size: $tamanho-g;
+      left: 50%;
+      position: absolute;
+      text-align: center;
+      text-shadow: $texto-sombra;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+  }
+}
