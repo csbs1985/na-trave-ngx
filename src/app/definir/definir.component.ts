@@ -10,7 +10,7 @@ import { TipoRoute } from '../shared/enum/tipo-route.enum';
 export class DefinirComponent implements OnInit {
   rotaBotao: string;
   textoBotao: string;
-  readonly textoCabecalho = 'Definição e configuração';
+  readonly textoCabecalho = 'Definição ajustes';
   readonly pagina = 'pagina';
 
   constructor(
@@ -39,6 +39,6 @@ export class DefinirComponent implements OnInit {
   }
 
   selecionarPagina(pagina: string): void {
-    this.route.navigate(['/' + TipoRoute.PRINCIPAL, pagina]);
+    this.route.navigate(['/' + pagina]);
   }
 }
