@@ -1,0 +1,21 @@
+@import '../../../../sass/styles.scss';
+
+.cabecalho {
+  display: flex;
+  height: $tamanho-gg;
+  justify-content: space-between;
+  padding: 0 $tamanho-m;
+  width: calc(100% - $tamanho-gg);
+
+  img {
+    flex: 0 0 auto;
+    height: 18px;
+    margin: 21px 0 0 0;
+  }
+
+  &-texto {
+    align-self: center;
+    flex: 1 0 auto;
+    margin: $tamanho-pp 0 0 $tamanho-m;
+  }
+}
