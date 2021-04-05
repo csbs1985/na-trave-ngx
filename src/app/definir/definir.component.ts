@@ -13,10 +13,10 @@ export class DefinirComponent implements OnInit {
 
   isPartida = false;
   isPlacar = false;
-  isConfirmar = true;
+  isConfirmar = false;
   isSelecionarEquipes = false;
 
-  readonly textoCabecalho = 'Definição ajustes';
+  readonly textoCabecalho = 'Definir ajustes';
   readonly pagina = 'pagina';
 
   constructor(

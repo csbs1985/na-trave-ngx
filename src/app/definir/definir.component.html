@@ -13,7 +13,7 @@
       <app-botao-voltar class="botao"></app-botao-voltar>
 
       <app-botao
-        *ngIf="isConfirmar"
+        [attr.disabled]="isConfirmar"
         class="botao"
         [rotaBotao]="rotaBotao"
         [textoBotao]="textoBotao"
