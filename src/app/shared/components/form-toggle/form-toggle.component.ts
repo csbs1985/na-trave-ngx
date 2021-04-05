@@ -1,20 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-form-toggle',
   templateUrl: './form-toggle.component.html',
   styleUrls: ['./form-toggle.component.scss']
 })
-export class FormToggleComponent implements OnInit {
+export class FormToggleComponent {
 
-  formToggle = {
-    titulo: 'titulo',
-    descricao: ''
-  };
+  @Input() formToggle;
+  @Output() formToggleResultado = new EventEmitter();
 
-  constructor() { }
+  isFormToggle = true;
 
-  ngOnInit(): void {
+  formToggleMudou(): void {
+    this.isFormToggle = !this.isFormToggle;
+    this.formToggleResultado.emit(this.isFormToggle);
   }
-
 }

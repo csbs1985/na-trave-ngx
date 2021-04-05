@@ -18,7 +18,15 @@
         [formTexto]="formTextoVisitante"
       ></app-form-texto>
 
-      <app-form-toggle></app-form-toggle>
+      <app-form-toggle
+        [formToggle]="FormToggleCronometro"
+        (formToggleResultado)="formToggleResultadoCronometro($event)"
+      ></app-form-toggle>
+
+      <app-form-toggle
+        [formToggle]="FormToggleOutro"
+        (formToggleResultado)="formToggleResultadoCronometro($event)"
+      ></app-form-toggle>
     </div>
 
     <div class="definir-rodape botao-duplo">

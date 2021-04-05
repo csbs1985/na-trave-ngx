@@ -23,6 +23,8 @@ export class DefinirComponent implements OnInit {
 
   formTextoCasa = {};
   formTextoVisitante = {};
+  FormToggleCronometro = {};
+  FormToggleOutro = {};
 
   constructor(
     private route: Router,
@@ -52,7 +54,7 @@ export class DefinirComponent implements OnInit {
     }
   }
 
-  iniciarPlacar(): any {
+  iniciarPlacar(): void {
     this.isPlacar = true;
     this.formTextoCasa = {
       titulo: 'time 1',
@@ -64,7 +66,15 @@ export class DefinirComponent implements OnInit {
       descricao: '',
       placeholder: 'time 2'
     };
-  };
+    this.FormToggleCronometro = {
+      titulo: 'titulo',
+      descricao: 'não tem descrição'
+    };
+    this.FormToggleOutro = {
+      titulo: 'titulo',
+      descricao: 'não tem descrição'
+    };
+  }
 
   selecionarPagina(pagina: string): void {
     if (pagina === this.manual) {
@@ -78,5 +88,9 @@ export class DefinirComponent implements OnInit {
 
   esporteSelecionado(esporte: string): void {
     this.isSelecionarEquipes = false;
+  }
+
+  formToggleResultadoCronometro(resultado) {
+    console.log(resultado);
   }
 }
