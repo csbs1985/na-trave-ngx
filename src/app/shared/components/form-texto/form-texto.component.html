@@ -1,0 +1,14 @@
+<div class="form-texto">
+  <div class="form-texto-titulo">{{ formTexto.titulo }}</div>
+
+  <div
+    class="form-texto-descricao"
+    *ngIf="formTexto.descricao"
+  > {{ formTexto.descricao }}</div>
+
+  <input
+    type="text"
+    class="form-texto-input"
+    placeholder="{{ formTexto.placeholder }}"
+  >
+</div>

@@ -1,0 +1,25 @@
+@import '../../../../sass/styles.scss';
+
+.form-texto {
+  border-bottom: $borda;
+  margin: $tamanho-m;
+
+  &-titulo {
+    margin-bottom: $tamanho-p;
+  }
+
+  &-descricao {
+    font-size: 12px;
+    margin-bottom: $tamanho-p;
+    text-transform: none;
+  }
+
+  &-input {
+    border: none;
+    height: $tamanho-m;
+    margin: 0;
+    margin-bottom: $tamanho-p;
+    padding: 0;
+    width: 100%;
+  }
+}

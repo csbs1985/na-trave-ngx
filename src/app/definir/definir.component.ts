@@ -9,15 +9,20 @@ import { TipoRoute } from '../shared/enum/tipo-route.enum';
 })
 export class DefinirComponent implements OnInit {
   rotaBotao: string;
-  textoBotao: string;
 
   isPartida = false;
   isPlacar = false;
   isConfirmar = false;
   isSelecionarEquipes = false;
 
-  readonly textoCabecalho = 'Definir ajustes';
+  textoCabecalho = 'Definir ajustes';
+  textoBotao = 'confirmar';
+
   readonly pagina = 'pagina';
+  readonly manual = 'manual';
+
+  formTextoCasa = {};
+  formTextoVisitante = {};
 
   constructor(
     private route: Router,
@@ -33,27 +38,45 @@ export class DefinirComponent implements OnInit {
 
     switch (this.rotaBotao) {
       case TipoRoute.PARTIDA:
-        this.textoBotao = 'partida';
         this.isPartida = true;
         break;
       case TipoRoute.PLACAR:
-        this.textoBotao = 'placar';
-        this.isPlacar = true;
+        this.iniciarPlacar();
         break;
       case TipoRoute.SELECIONAR_EQUIPE:
-        this.textoBotao = 'selecionar equipe';
         this.isSelecionarEquipes = true;
         this.isConfirmar = false;
+        this.rotaBotao = this.manual;
+        this.textoBotao = 'definir manualmente';
         break;
     }
   }
 
+  iniciarPlacar(): any {
+    this.isPlacar = true;
+    this.formTextoCasa = {
+      titulo: 'time 1',
+      descricao: '',
+      placeholder: 'time 1'
+    };
+    this.formTextoVisitante = {
+      titulo: 'time 2',
+      descricao: '',
+      placeholder: 'time 2'
+    };
+  };
+
   selecionarPagina(pagina: string): void {
+    if (pagina === this.manual) {
+      this.isSelecionarEquipes = false;
+      this.rotaBotao = this.manual;
+      this.textoBotao = 'confirmar';
+      return;
+    }
     this.route.navigate(['/' + pagina]);
   }
 
   esporteSelecionado(esporte: string): void {
-    console.log(esporte);
     this.isSelecionarEquipes = false;
   }
 }

@@ -25,7 +25,7 @@ export class SelecionarEsporteComponent {
       tipoEsporte: 'futsete',
       imagem: '../../assets/images/futsete.jpeg'
     }
-  ]
+  ];
 
   selecionarEsporte(esporte): void {
     this.esporteSelecionado.emit(esporte);
