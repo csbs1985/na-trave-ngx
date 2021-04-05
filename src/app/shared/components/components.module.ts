@@ -4,6 +4,7 @@ import { BotaoVoltarComponent } from './botao-voltar/botao-voltar.component';
 import { BotaoComponent } from './botao/botao.component';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { FormTextoComponent } from './form-texto/form-texto.component';
+import { FormToggleComponent } from './form-toggle/form-toggle.component';
 import { SelecionarEsporteComponent } from './selecionar-esporte/selecionar-esporte.component';
 
 @NgModule({
@@ -12,14 +13,16 @@ import { SelecionarEsporteComponent } from './selecionar-esporte/selecionar-espo
     BotaoVoltarComponent,
     CabecalhoComponent,
     SelecionarEsporteComponent,
-    FormTextoComponent
+    FormTextoComponent,
+    FormToggleComponent
   ],
   exports: [
     BotaoComponent,
     BotaoVoltarComponent,
     CabecalhoComponent,
     SelecionarEsporteComponent,
-    FormTextoComponent
+    FormTextoComponent,
+    FormToggleComponent
   ],
   imports: [CommonModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

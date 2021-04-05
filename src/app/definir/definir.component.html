@@ -8,9 +8,17 @@
         (esporteSelecionado)="esporteSelecionado($event)"
       ></app-selecionar-esporte>
 
-      <app-form-texto [formTexto]="formTextoCasa"></app-form-texto>
+      <app-form-texto
+        *ngIf="isPlacar"
+        [formTexto]="formTextoCasa"
+      ></app-form-texto>
 
-      <app-form-texto [formTexto]="formTextoVisitante"></app-form-texto>
+      <app-form-texto
+        *ngIf="isPlacar"
+        [formTexto]="formTextoVisitante"
+      ></app-form-texto>
+
+      <app-form-toggle></app-form-toggle>
     </div>
 
     <div class="definir-rodape botao-duplo">

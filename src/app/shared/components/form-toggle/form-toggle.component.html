@@ -1,0 +1,61 @@
+<div class="form-toggle">
+  <div class="form-toggle-esquerda">
+    <div class="form-toggle-titulo">{{ formToggle.titulo }}</div>
+
+    <div
+      class="form-toggle-descricao"
+      *ngIf="formToggle.descricao"
+    >{{ formToggle.descricao }}</div>
+  </div>
+
+  <div class="form-toggle-direita">
+    <div class="form-toggle-toggle">
+      <input
+        id="toggle-on"
+        class="toggle toggle-left"
+        name="toggle"
+        value="false"
+        type="radio"
+        checked
+      >
+      <label
+        for="toggle-on"
+        class="btn"
+      >
+
+        <svg
+          width="16"
+          height="24"
+        >
+          <defs>
+            <symbol
+              id="checkbox-checkmark"
+              viewBox="0 0 16 24"
+            >
+              <path
+                fill="none"
+                stroke="#ffffff"
+                stroke-miterlimit="10"
+                stroke-width="2px"
+                d="M1 13l4 4L15 7"
+              ></path>
+            </symbol>
+          </defs>
+          <use xlink:href="#checkbox-checkmark"></use>
+        </svg>
+      </label>
+
+      <input
+        id="toggle-off"
+        class="toggle toggle-right"
+        name="toggle"
+        value="true"
+        type="radio"
+      >
+      <label
+        for="toggle-off"
+        class="btn btn-off"
+      ></label>
+    </div>
+  </div>
+</div>
