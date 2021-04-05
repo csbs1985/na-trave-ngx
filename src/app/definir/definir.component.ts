@@ -70,10 +70,6 @@ export class DefinirComponent implements OnInit {
       titulo: 'titulo',
       descricao: 'não tem descrição'
     };
-    this.FormToggleOutro = {
-      titulo: 'titulo',
-      descricao: 'não tem descrição'
-    };
   }
 
   selecionarPagina(pagina: string): void {
@@ -90,7 +86,7 @@ export class DefinirComponent implements OnInit {
     this.isSelecionarEquipes = false;
   }
 
-  formToggleResultadoCronometro(resultado) {
+  formToggleResultadoCronometro(resultado): any {
     console.log(resultado);
   }
 }
