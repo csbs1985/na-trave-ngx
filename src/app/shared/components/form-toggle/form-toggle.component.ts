@@ -9,7 +9,7 @@ export class FormToggleComponent implements OnInit {
 
   formToggle = {
     titulo: 'titulo',
-    descricao: 'descricao'
+    descricao: ''
   };
 
   constructor() { }

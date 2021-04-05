@@ -3,13 +3,13 @@
 .form-texto {
   border-bottom: $borda-p;
   margin: $tamanho-m;
+  font-size: 12px;
 
   &-titulo {
     margin-bottom: $tamanho-p;
   }
 
   &-descricao {
-    font-size: 12px;
     margin-bottom: $tamanho-p;
     text-transform: none;
   }

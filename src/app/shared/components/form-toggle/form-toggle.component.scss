@@ -4,6 +4,7 @@
   border-bottom: $borda-p;
   display: flex;
   margin: $tamanho-m;
+  font-size: 12px;
 
   &-esquerda {
     flex: 1 1 auto;
@@ -14,7 +15,6 @@
   }
 
   &-descricao {
-    font-size: 12px;
     margin-bottom: $tamanho-p;
     text-transform: none;
   }
