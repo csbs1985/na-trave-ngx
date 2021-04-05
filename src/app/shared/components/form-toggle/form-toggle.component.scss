@@ -1,23 +1,19 @@
 @import '../../../../sass/styles.scss';
 
 .form-toggle {
-  border-bottom: $borda-p;
+  @include form-caixa;
   display: flex;
-  margin: $tamanho-m;
-  font-size: 12px;
 
   &-esquerda {
     flex: 1 1 auto;
   }
 
   &-titulo {
-    margin-bottom: $tamanho-p;
-    font-weight: bold;
+    @include form-titulo;
   }
 
   &-descricao {
-    margin-bottom: $tamanho-p;
-    text-transform: none;
+    @include form-descricao;
   }
 
   &-direita {

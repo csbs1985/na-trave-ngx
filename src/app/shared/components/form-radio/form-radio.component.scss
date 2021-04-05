@@ -1,18 +1,14 @@
 @import '../../../../sass/styles.scss';
 
 .form-radio {
-  border-bottom: $borda-p;
-  font-size: 12px;
-  margin: $tamanho-m;
+  @include form-caixa;
 
   &-titulo {
-    margin-bottom: $tamanho-p;
-    font-weight: bold;
+    @include form-titulo;
   }
 
   &-descricao {
-    margin-bottom: $tamanho-p;
-    text-transform: none;
+    @include form-descricao;
   }
 
   &-radio {

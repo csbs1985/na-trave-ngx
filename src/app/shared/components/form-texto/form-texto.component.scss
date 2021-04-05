@@ -1,18 +1,14 @@
 @import '../../../../sass/styles.scss';
 
 .form-texto {
-  border-bottom: $borda-p;
-  margin: $tamanho-m;
-  font-size: 12px;
+  @include form-caixa;
 
   &-titulo {
-    margin-bottom: $tamanho-p;
-    font-weight: bold;
+    @include form-titulo;
   }
 
   &-descricao {
-    margin-bottom: $tamanho-p;
-    text-transform: none;
+    @include form-descricao;
   }
 
   &-input {

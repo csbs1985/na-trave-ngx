@@ -56,16 +56,19 @@ export class DefinirComponent implements OnInit {
   }
 
   popularPlacar(): void {
+    this.textoCabecalho = 'Definir placar e cronômetro'
     this.isPlacar = true;
     this.formTextoCasa = {
-      titulo: 'time mantande',
+      titulo: 'time mandante',
       descricao: '',
-      placeholder: 'Mantande'
+      placeholder: 'Mandante',
+      textoPadrao: 'Mandante',
     };
     this.formTextoVisitante = {
       titulo: 'time visitante',
       descricao: '',
-      placeholder: 'Visitante'
+      placeholder: 'Visitante',
+      textoPadrao: 'Visitante',
     };
     this.formToggleCronometro = {
       titulo: 'cronômetro',
@@ -87,6 +90,7 @@ export class DefinirComponent implements OnInit {
     };
   }
 
+  ////////////////////////////////////////////////////
   selecionarPagina(pagina: string): void {
     if (pagina === this.manual) {
       this.isSelecionarEquipes = false;

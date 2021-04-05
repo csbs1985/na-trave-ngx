@@ -1,0 +1,16 @@
+@mixin form-caixa {
+  border-bottom: $borda-p;
+  margin: $tamanho-m;
+  font-size: 12px;
+}
+
+@mixin form-titulo {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: $tamanho-p;
+}
+
+@mixin form-descricao {
+  margin-bottom: $tamanho-p;
+  text-transform: none;
+}
