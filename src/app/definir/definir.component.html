@@ -5,12 +5,13 @@
     <div class="definir-conteudo">
       <app-selecionar-esporte
         *ngIf="isSelecionarEquipes"
-        (esporteSelecionado)="esporteSelecionado($event)"
+        (FormImagemResultado)="FormImagemResultado($event)"
       ></app-selecionar-esporte>
 
       <app-form-texto
         *ngIf="isPlacar"
         [formTexto]="formTextoCasa"
+        (formTextoResultado)="formTextoResultado($event)"
       ></app-form-texto>
 
       <app-form-texto
@@ -25,13 +26,13 @@
       ></app-form-toggle>
 
       <app-form-radio
-        *ngIf="isPlacar"
+        *ngIf="isPlacar && isCronometro"
         [formRadio]="formRadioQtdPeriodo"
         (formRadioResultado)="formRadioResultadoPediodo($event)"
       ></app-form-radio>
 
       <app-form-radio
-        *ngIf="isPlacar"
+        *ngIf="isPlacar && isCronometro"
         [formRadio]="formRadioDuracaoPeriodo"
         (formRadioResultado)="formRadioResultadoPediodo($event)"
       ></app-form-radio>
@@ -41,7 +42,7 @@
       <app-botao-voltar class="botao"></app-botao-voltar>
 
       <app-botao
-        [attr.disabled]="isConfirmar"
+        [class.botao-desabilitado]="!isConfirmar"
         class="botao"
         [rotaBotao]="rotaBotao"
         [textoBotao]="textoBotao"

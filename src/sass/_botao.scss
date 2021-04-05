@@ -53,3 +53,8 @@
     margin-right: $tamanho-m;
   }
 }
+
+.botao-desabilitado {
+  pointer-events: none;
+  opacity: 0.5;
+}

@@ -6,7 +6,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./selecionar-esporte.component.scss']
 })
 export class SelecionarEsporteComponent {
-  @Output() esporteSelecionado = new EventEmitter();
+  @Output() FormImagemResultado = new EventEmitter();
 
   esportes = [
     {
@@ -28,6 +28,6 @@ export class SelecionarEsporteComponent {
   ];
 
   selecionarEsporte(esporte): void {
-    this.esporteSelecionado.emit(esporte);
+    this.FormImagemResultado.emit(esporte);
   }
 }

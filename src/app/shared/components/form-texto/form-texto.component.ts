@@ -1,16 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-form-texto',
   templateUrl: './form-texto.component.html',
   styleUrls: ['./form-texto.component.scss']
 })
-export class FormTextoComponent implements OnInit {
+export class FormTextoComponent {
 
   @Input() formTexto;
+  @Output() formTextoResultado = new EventEmitter();
 
-  constructor() { }
-
-  ngOnInit(): void {
+  selecionarTexto(texto): void {
+    this.formTextoResultado.emit(texto);
   }
 }

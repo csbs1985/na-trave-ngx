@@ -14,6 +14,7 @@ export class DefinirComponent implements OnInit {
   isPlacar = false;
   isConfirmar = false;
   isSelecionarEquipes = false;
+  isCronometro = true;
 
   textoCabecalho = 'Definir ajustes';
   textoBotao = 'confirmar';
@@ -56,7 +57,7 @@ export class DefinirComponent implements OnInit {
   }
 
   popularPlacar(): void {
-    this.textoCabecalho = 'Definir placar e cronômetro'
+    this.textoCabecalho = 'Definir placar e cronômetro';
     this.isPlacar = true;
     this.formTextoCasa = {
       titulo: 'time mandante',
@@ -101,11 +102,16 @@ export class DefinirComponent implements OnInit {
     this.route.navigate(['/' + pagina]);
   }
 
-  esporteSelecionado(esporte: string): void {
+  FormImagemResultado(resultado: string): void {
     this.isSelecionarEquipes = false;
   }
 
+  formTextoResultado(resultado): void {
+    console.log('formTextoResultado', resultado);
+  }
+
   formToggleResultadoCronometro(resultado): void {
+    this.isCronometro = resultado;
     console.log(resultado);
   }
 

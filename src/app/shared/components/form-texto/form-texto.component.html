@@ -11,5 +11,6 @@
     class="form-texto-input"
     placeholder="{{ formTexto.placeholder }}"
     value="{{ formTexto.textoPadrao }}"
+    (change)="selecionarTexto($event)"
   >
 </div>
