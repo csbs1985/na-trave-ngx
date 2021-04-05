@@ -23,8 +23,9 @@ export class DefinirComponent implements OnInit {
 
   formTextoCasa = {};
   formTextoVisitante = {};
-  FormToggleCronometro = {};
-  FormToggleOutro = {};
+  formToggleCronometro = {};
+  formRadioQtdPeriodo = {};
+  formRadioDuracaoPeriodo = {};
 
   constructor(
     private route: Router,
@@ -32,10 +33,10 @@ export class DefinirComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.iniciarPagina();
+    this.popularDefinir();
   }
 
-  iniciarPagina(): void {
+  popularDefinir(): void {
     this.rotaBotao = (this.activatedRoute.snapshot.paramMap.get(this.pagina));
 
     switch (this.rotaBotao) {
@@ -43,7 +44,7 @@ export class DefinirComponent implements OnInit {
         this.isPartida = true;
         break;
       case TipoRoute.PLACAR:
-        this.iniciarPlacar();
+        this.popularPlacar();
         break;
       case TipoRoute.SELECIONAR_EQUIPE:
         this.isSelecionarEquipes = true;
@@ -54,21 +55,35 @@ export class DefinirComponent implements OnInit {
     }
   }
 
-  iniciarPlacar(): void {
+  popularPlacar(): void {
     this.isPlacar = true;
     this.formTextoCasa = {
-      titulo: 'time 1',
+      titulo: 'time mantande',
       descricao: '',
-      placeholder: 'time 1'
+      placeholder: 'Mantande'
     };
     this.formTextoVisitante = {
-      titulo: 'time 2',
+      titulo: 'time visitante',
       descricao: '',
-      placeholder: 'time 2'
+      placeholder: 'Visitante'
     };
-    this.FormToggleCronometro = {
-      titulo: 'titulo',
-      descricao: 'não tem descrição'
+    this.formToggleCronometro = {
+      titulo: 'cronômetro',
+      descricao: 'Habilita o Cronômetro junto ao placar.'
+    };
+    this.formRadioQtdPeriodo = {
+      titulo: 'Periodos',
+      descricao: 'Quantidade de periodos da partida.',
+      valor: [
+        1, 2
+      ]
+    };
+    this.formRadioDuracaoPeriodo = {
+      titulo: 'Duração',
+      descricao: 'Duração de cada periodo.',
+      valor: [
+        10, 15, 20, 25, 30, 35, 40, 45
+      ]
     };
   }
 
@@ -86,7 +101,11 @@ export class DefinirComponent implements OnInit {
     this.isSelecionarEquipes = false;
   }
 
-  formToggleResultadoCronometro(resultado): any {
+  formToggleResultadoCronometro(resultado): void {
+    console.log(resultado);
+  }
+
+  formRadioResultadoPediodo(resultado): void {
     console.log(resultado);
   }
 }

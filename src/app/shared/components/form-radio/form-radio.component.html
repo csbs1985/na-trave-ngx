@@ -1,0 +1,26 @@
+<div class="form-radio">
+  <div class="form-radio-titulo">{{ formRadio.titulo }}</div>
+
+  <div
+    class="form-radio-descricao"
+    *ngIf="formRadio.descricao"
+  >{{ formRadio.descricao }}</div>
+
+  <div class="form-radio-radio">
+    <div
+      class="form-radio-item"
+      *ngFor="let item of formRadio.valor"
+    >
+      <input
+        type="radio"
+        name="default"
+        [id]="item"
+        value="Option1"
+      >
+      <label
+        [for]="item"
+        (click)="selecionarRadio(item)"
+      >{{ item }}</label>
+    </div>
+  </div>
+</div>

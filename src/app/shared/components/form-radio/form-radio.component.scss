@@ -1,0 +1,54 @@
+@import '../../../../sass/styles.scss';
+
+.form-radio {
+  border-bottom: $borda-p;
+  font-size: 12px;
+  margin: $tamanho-m;
+
+  &-titulo {
+    margin-bottom: $tamanho-p;
+    font-weight: bold;
+  }
+
+  &-descricao {
+    margin-bottom: $tamanho-p;
+    text-transform: none;
+  }
+
+  &-radio {
+    display: flex;
+    flex-direction: row;
+    height: $tamanho-m;
+    margin-bottom: $tamanho-pp;
+    width: 100%;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    input {
+      display: none;
+    }
+
+    input:checked+label {
+      border-bottom-color: $cor-primario;
+      color: $cor-primario;
+      z-index: 1;
+    }
+
+    label {
+      border-bottom: $borda-m;
+      border-bottom-color: $cor-base;
+      box-sizing: border-box;
+      color: $cor-secundario;
+      flex: 1 1 auto;
+      height: 24px;
+      text-align: center;
+      transition: border-color .15s ease-out,
+        background-color .15s ease-out,
+        color .25s ease-out;
+    }
+  }
+}

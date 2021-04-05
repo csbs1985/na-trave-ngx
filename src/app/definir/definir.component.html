@@ -19,9 +19,22 @@
       ></app-form-texto>
 
       <app-form-toggle
-        [formToggle]="FormToggleCronometro"
+        *ngIf="isPlacar"
+        [formToggle]="formToggleCronometro"
         (formToggleResultado)="formToggleResultadoCronometro($event)"
       ></app-form-toggle>
+
+      <app-form-radio
+        *ngIf="isPlacar"
+        [formRadio]="formRadioQtdPeriodo"
+        (formRadioResultado)="formRadioResultadoPediodo($event)"
+      ></app-form-radio>
+
+      <app-form-radio
+        *ngIf="isPlacar"
+        [formRadio]="formRadioDuracaoPeriodo"
+        (formRadioResultado)="formRadioResultadoPediodo($event)"
+      ></app-form-radio>
     </div>
 
     <div class="definir-rodape botao-duplo">
