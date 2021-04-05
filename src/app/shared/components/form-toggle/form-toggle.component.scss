@@ -21,12 +21,13 @@
 
   &-direita {
     display: inline-flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
   }
 
   &-toggle {
     flex: 0 1 auto;
+    margin-bottom: $tamanho-p;
 
     .btn {
       border: $borda-m;
