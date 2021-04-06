@@ -42,6 +42,14 @@
   }
 }
 
+.botao-transparente {
+  button {
+    background-color: $cor-base;
+    border: 1px solid $cor-primario;
+    color: $cor-primario;
+  }
+}
+
 .botao-duplo {
   display: flex;
   flex-direction: row;

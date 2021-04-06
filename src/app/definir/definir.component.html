@@ -34,12 +34,12 @@
       <app-form-radio
         *ngIf="isPlacar && isCronometro"
         [formRadio]="formRadioDuracaoPeriodo"
-        (formRadioResultado)="formRadioResultadoPediodo($event)"
+        (formRadioResultado)="formRadioResultadoDuracao($event)"
       ></app-form-radio>
     </div>
 
     <div class="definir-rodape botao-duplo">
-      <app-botao-voltar class="botao"></app-botao-voltar>
+      <app-botao-voltar class="botao botao-transparente"></app-botao-voltar>
 
       <app-botao
         [class.botao-desabilitado]="!isConfirmar"
