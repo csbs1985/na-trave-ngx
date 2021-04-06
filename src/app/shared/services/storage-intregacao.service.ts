@@ -17,15 +17,15 @@ export class StorageIntegracaoService {
   ) { }
 
   lerPartida(): Promise<StoragePartida> {
-    return this.lerSessao<StoragePartida>(Aplicacao.PARTIDA, StoragePartida);
+    return this.lerSessao(Aplicacao.PARTIDA);
   }
 
-  lerPlacar(): Promise<StoragePlacar> {
-    return this.lerSessao<StoragePlacar>(Aplicacao.PARTIDA, StoragePlacar);
+  lerPlacar(): StoragePlacar {
+    return this.lerSessao(Aplicacao.PLACAR);
   }
 
   lerSelecionarEquipe(): Promise<StorageSelecionarEquipe> {
-    return this.lerSessao<StorageSelecionarEquipe>(Aplicacao.PARTIDA, StorageSelecionarEquipe);
+    return this.lerSessao(Aplicacao.PARTIDA);
   }
 
   salvarPartida(dados: Partida): void {
@@ -40,11 +40,8 @@ export class StorageIntegracaoService {
     this.salvar<SelecionarEquipe>(Aplicacao.SELECIONAR_EQUIPE, dados);
   }
 
-  private lerSessao<T extends Object>(aplicacao: Aplicacao, classevalidade): any {
-    const dados = this.sessao.dados[aplicacao];
-    const validacao = { validator: { skipMissingproperties: true } };
-
-    localStorage.getItem(aplicacao);
+  private lerSessao(aplicacao: Aplicacao): any {
+    return this.sessao.dados[aplicacao];
   }
 
   private salvar<T>(aplicacao: Aplicacao, dados: T) {
