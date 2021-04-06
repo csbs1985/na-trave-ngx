@@ -1,45 +1,37 @@
 <section>
-  <div class="definir">
+  <div class="ajuste-placar">
     <app-cabecalho [cabecalhoTexto]="cabecalhoTexto"></app-cabecalho>
 
-    <div class="definir-conteudo">
-      <app-selecionar-esporte
-        *ngIf="isSelecionarEquipes"
-        (FormImagemResultado)="esporteResultado($event)"
-      ></app-selecionar-esporte>
-
+    <div class="ajuste-placar-conteudo">
       <app-form-texto
-        *ngIf="isPlacar"
         [formTexto]="formTextoMandante"
         (formTextoResultado)="mandanteResultado($event)"
       ></app-form-texto>
 
       <app-form-texto
-        *ngIf="isPlacar"
         [formTexto]="formTextoVisitante"
         (formTextoResultado)="visitanteResultado($event)"
       ></app-form-texto>
 
       <app-form-toggle
-        *ngIf="isPlacar"
         [formToggle]="formToggleCronometro"
         (formToggleResultado)="cronometroResultado($event)"
       ></app-form-toggle>
 
       <app-form-radio
-        *ngIf="isPlacar && cronometro"
+        *ngIf="placar.cronometro"
         [formRadio]="formRadioQtdPeriodo"
         (formRadioResultado)="periodoResultado($event)"
       ></app-form-radio>
 
       <app-form-radio
-        *ngIf="isPlacar && cronometro"
+        *ngIf="placar.cronometro"
         [formRadio]="formRadioDuracaoPeriodo"
         (formRadioResultado)="duracaoResultado($event)"
       ></app-form-radio>
     </div>
 
-    <div class="definir-rodape botao-duplo">
+    <div class="ajuste-placar-rodape botao-duplo">
       <app-botao-voltar class="botao botao-transparente"></app-botao-voltar>
 
       <app-botao

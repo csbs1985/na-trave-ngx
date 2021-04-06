@@ -8,21 +8,26 @@ import { TipoRoute } from '../shared/enum/tipo-route.enum';
   styleUrls: ['./definir.component.scss']
 })
 export class DefinirComponent implements OnInit {
-  rotaBotao: string;
+  botaoRota: string;
 
   isPartida = false;
   isPlacar = false;
   isConfirmar = false;
   isSelecionarEquipes = false;
-  isCronometro = true;
 
-  textoCabecalho = 'Definir ajustes';
-  textoBotao = 'confirmar';
+  cabecalhoTexto = 'Definir ajustes';
+  botaoTexto = 'confirmar';
+
+  cronometro = true;
+  duracao: number;
+  mandante: string;
+  periodo: number;
+  visitante: string;
 
   readonly pagina = 'pagina';
   readonly manual = 'manual';
 
-  formTextoCasa = {};
+  formTextoMandante = {};
   formTextoVisitante = {};
   formToggleCronometro = {};
   formRadioQtdPeriodo = {};
@@ -38,9 +43,9 @@ export class DefinirComponent implements OnInit {
   }
 
   popularDefinir(): void {
-    this.rotaBotao = (this.activatedRoute.snapshot.paramMap.get(this.pagina));
+    this.botaoRota = (this.activatedRoute.snapshot.paramMap.get(this.pagina));
 
-    switch (this.rotaBotao) {
+    switch (this.botaoRota) {
       case TipoRoute.PARTIDA:
         this.isPartida = true;
         break;
@@ -50,16 +55,16 @@ export class DefinirComponent implements OnInit {
       case TipoRoute.SELECIONAR_EQUIPE:
         this.isSelecionarEquipes = true;
         this.isConfirmar = false;
-        this.rotaBotao = this.manual;
-        this.textoBotao = 'definir manualmente';
+        this.botaoRota = this.manual;
+        this.botaoTexto = 'definir manualmente';
         break;
     }
   }
 
   popularPlacar(): void {
-    this.textoCabecalho = 'Definir placar e cronômetro';
+    this.cabecalhoTexto = 'Definir placar e cronômetro';
     this.isPlacar = true;
-    this.formTextoCasa = {
+    this.formTextoMandante = {
       titulo: 'time mandante',
       descricao: '',
       placeholder: 'Mandante',
@@ -92,30 +97,65 @@ export class DefinirComponent implements OnInit {
   }
 
   ////////////////////////////////////////////////////
-  selecionarPagina(pagina: string): void {
-    if (pagina === this.manual) {
-      this.isSelecionarEquipes = false;
-      this.rotaBotao = this.manual;
-      this.textoBotao = 'confirmar';
-      return;
-    }
-    this.route.navigate(['/' + pagina]);
-  }
 
-  FormImagemResultado(resultado: string): void {
+  esporteResultado(resultado: string): void {
     this.isSelecionarEquipes = false;
   }
 
-  formTextoResultado(resultado): void {
-    console.log('formTextoResultado', resultado);
+  mandanteResultado(resultado: string): void {
+    this.mandante = resultado;
   }
 
-  formToggleResultadoCronometro(resultado): void {
-    this.isCronometro = resultado;
-    console.log(resultado);
+  visitanteResultado(resultado: string): void {
+    this.visitante = resultado;
   }
 
-  formRadioResultadoPediodo(resultado): void {
-    console.log(resultado);
+  cronometroResultado(resultado: boolean): void {
+    this.cronometro = resultado;
+  }
+
+  periodoResultado(resultado: number): void {
+    this.periodo = resultado;
+  }
+
+  duracaoResultado(resultado: number): void {
+    this.duracao = resultado;
+  }
+
+
+  ////////////////////////////////
+
+  botaoConfirmar(pagina: string): void {
+    switch (pagina) {
+      case TipoRoute.PARTIDA:
+
+        break;
+      case TipoRoute.PLACAR:
+        this.validarPlacar();
+        break;
+      case TipoRoute.SELECIONAR_EQUIPE:
+
+        break;
+    }
+
+    // if (pagina === this.manual) {
+    //   this.isSelecionarEquipes = false;
+    //   this.botaoRota = this.manual;
+    //   this.botaoTexto = 'confirmar';
+    //   return;
+    // }
+    this.route.navigate(['/' + pagina]);
+  }
+
+  validarPlacar(): any {
+    const dados = {
+      mandante: this.mandante,
+      visitante: this.visitante,
+      cronometro: this.cronometro,
+      periodo: this.periodo,
+      duracao: this.duracao
+    };
+
+    console.log(dados);
   }
 }

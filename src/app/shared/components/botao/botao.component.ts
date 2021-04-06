@@ -6,8 +6,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class BotaoComponent {
 
-  @Input() rotaBotao: string;
-  @Input() textoBotao: string;
+  @Input() botaoRota: string;
+  @Input() botaoTexto: string;
   @Output() cliqueBotao = new EventEmitter();
 
   selecionarBotao(selecao): void {

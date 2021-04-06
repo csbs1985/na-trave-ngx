@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TipoRoute } from '../shared/enum/tipo-route.enum';
 import { StotageService } from '../shared/services/stotage.service';
 
 @Component({
@@ -11,7 +10,7 @@ import { StotageService } from '../shared/services/stotage.service';
 export class PrincipalComponent implements OnInit {
   menuPrincipal = [
     {
-      rota: 'placar',
+      rota: 'ajuste-placar',
       texto: 'placar e cronômetro'
     },
     {
@@ -49,6 +48,6 @@ export class PrincipalComponent implements OnInit {
   }
 
   selecionarPagina(pagina: string): void {
-    this.route.navigate(['/' + TipoRoute.PRINCIPAL, pagina]);
+    this.route.navigate(['/' + pagina]);
   }
 }

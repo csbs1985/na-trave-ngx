@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class CabecalhoComponent {
 
-  @Input() textoCabecalho: string;
+  @Input() cabecalhoTexto: string;
 
   constructor(
     private location: Location

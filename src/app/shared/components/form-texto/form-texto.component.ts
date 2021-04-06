@@ -12,6 +12,6 @@ export class FormTextoComponent {
   @Output() formTextoResultado = new EventEmitter();
 
   selecionarTexto(texto): void {
-    this.formTextoResultado.emit(texto);
+    this.formTextoResultado.emit(texto.target.value);
   }
 }

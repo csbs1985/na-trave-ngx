@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { AjustePlacarModule } from './ajuste-placar/ajuste-placar.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DefinirModule } from './definir/definir.module';
@@ -26,7 +27,8 @@ import { SharedModule } from './shared/shared.module';
     PrincipalModule,
     DefinirModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    AjustePlacarModule
   ],
   providers: [],
   bootstrap: [AppComponent],
