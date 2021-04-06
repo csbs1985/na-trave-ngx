@@ -13,14 +13,13 @@
     >
       <input
         type="radio"
-        name="item"
         [id]="item"
-        value="item"
-        checked
+        [value]="item"
+        [checked]="item === formRadio.checked"
       >
       <label
         [for]="item"
-        (click)="selecionarRadio(item)"
+        (click)="botaoConfirmar(item)"
       >{{ item }}</label>
     </div>
   </div>

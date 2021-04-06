@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TipoRoute } from '../shared/enum/tipo-route.enum';
+import { StoragePlacar } from '../shared/models/storage-selecionae-equipe.model';
+import { StorageIntegracaoService } from '../shared/services/storage-intregacao.service';
 
 @Component({
   selector: 'app-ajuste-placar',
@@ -11,7 +13,7 @@ export class AjustePlacarComponent implements OnInit {
 
   readonly botaoTexto = 'confirmar';
   readonly botaoRota = 'placar';
-  readonly cabecalhoTexto = 'Definir placar e cronômetro';
+  readonly cabecalhoTexto = 'Ajustar placar e cronômetro';
 
   formTextoMandante = {};
   formTextoVisitante = {};
@@ -19,7 +21,7 @@ export class AjustePlacarComponent implements OnInit {
   formRadioQtdPeriodo = {};
   formRadioDuracaoPeriodo = {};
 
-  placar = {
+  placar: StoragePlacar = {
     cronometro: true,
     duracao: 45,
     mandante: 'Mandante',
@@ -29,6 +31,7 @@ export class AjustePlacarComponent implements OnInit {
 
   constructor(
     private route: Router,
+    private integracaoService: StorageIntegracaoService
   ) { }
 
   ngOnInit(): void {
@@ -55,6 +58,7 @@ export class AjustePlacarComponent implements OnInit {
     this.formRadioQtdPeriodo = {
       titulo: 'Periodos',
       descricao: 'Quantidade de periodos da partida.',
+      checked: 2,
       valor: [
         1, 2
       ]
@@ -62,6 +66,7 @@ export class AjustePlacarComponent implements OnInit {
     this.formRadioDuracaoPeriodo = {
       titulo: 'Duração',
       descricao: 'Duração de cada periodo.',
+      checked: 45,
       valor: [
         10, 15, 20, 25, 30, 35, 40, 45
       ]
@@ -89,6 +94,36 @@ export class AjustePlacarComponent implements OnInit {
   }
 
   botaoConfirmar(pagina: TipoRoute): void {
+    this.validarDados();
+    this.salvarDados();
     this.route.navigate(['/' + pagina]);
+  }
+
+  private validarDados(): void {
+    if (!this.placar.mandante) {
+      this.placar.mandante = 'mandante';
+    }
+
+    if (!this.placar.visitante) {
+      this.placar.mandante = 'visitante';
+    }
+
+    if (!this.placar.cronometro) {
+      this.placar.periodo = null;
+      this.placar.duracao = null;
+    } else {
+
+      if (!this.placar.periodo) {
+        this.placar.periodo = 2;
+      }
+
+      if (!this.placar.duracao) {
+        this.placar.duracao = 45;
+      }
+    }
+  }
+
+  private salvarDados(): void {
+    this.integracaoService.salvarPlacar(this.placar);
   }
 }

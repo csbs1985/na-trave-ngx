@@ -9,9 +9,7 @@ export class FormRadioComponent {
   @Input() formRadio;
   @Output() formRadioResultado = new EventEmitter();
 
-  constructor() { }
-
-  selecionarRadio(radio): void {
+  botaoConfirmar(radio): void {
     this.formRadioResultado.emit(radio);
   }
 }
