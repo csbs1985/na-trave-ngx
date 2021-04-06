@@ -2,8 +2,10 @@
 
 .placar {
   &-banner {
-    // background-image: url('../assets/images/placar.jpg');
+    background-image: url('../../assets/images/placar.jpg');
+    background-position: 50% 80%;
     background-size: cover;
     height: 140px;
+    width: 100%;
   }
 }
