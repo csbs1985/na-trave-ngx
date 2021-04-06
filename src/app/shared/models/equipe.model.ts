@@ -1,4 +1,4 @@
-import { Atleta } from "./atleta.model";
+import { Atleta } from './atleta.model';
 
 export class Equipe {
   id: string;

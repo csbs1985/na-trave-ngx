@@ -1,5 +1,5 @@
-import { TipoSituacao } from "../enum/tipo-situacao.enum";
-import { Equipe } from "./equipe.model";
+import { TipoSituacao } from '../enum/tipo-situacao.enum';
+import { Equipe } from './equipe.model';
 
 export class SelecionarEquipe {
   situacao: TipoSituacao;

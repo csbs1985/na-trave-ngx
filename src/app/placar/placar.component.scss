@@ -1,1 +1,9 @@
 @import '../../sass/styles.scss';
+
+.placar {
+  &-banner {
+    // background-image: url('../assets/images/placar.jpg');
+    background-size: cover;
+    height: 140px;
+  }
+}

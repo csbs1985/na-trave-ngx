@@ -3,5 +3,5 @@ export class StoragePlacar {
   duracao: number;
   mandante: string;
   periodo: number;
-  visitante: string
+  visitante: string;
 }

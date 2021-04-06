@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoragePlacar } from '../shared/models/storage-selecionae-equipe.model';
 import { StorageIntegracaoService } from '../shared/services/storage-intregacao.service';
 
 @Component({
@@ -8,15 +9,19 @@ import { StorageIntegracaoService } from '../shared/services/storage-intregacao.
 })
 export class PlacarComponent implements OnInit {
 
+  placarSessao: StoragePlacar;
+
+  readonly cabecalhoTexto = 'Placa e cronômetro da partida';
+
   constructor(
     private integracaoService: StorageIntegracaoService
   ) { }
 
   ngOnInit(): void {
-    this.popularPlacar()
+    this.popularPlacar();
   }
 
   private popularPlacar(): any {
-    const placar = this.integracaoService.lerPlacar();
+    this.placarSessao = this.integracaoService.lerPlacar();
   }
 }
