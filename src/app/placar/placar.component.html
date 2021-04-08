@@ -3,10 +3,48 @@
     <app-cabecalho [cabecalhoTexto]="cabecalhoTexto"></app-cabecalho>
 
     <div class="placar-banner"></div>
+
+    <div class="placar-placar">
+      <div class="placar-esquerdo">
+        <div class="placar-nome">{{ placarSessao.mandante }}</div>
+        <div class="placar-ponto">9</div>
+      </div>
+
+      <div class="placar-centro">x</div>
+
+      <div class="placar-direito">
+        <div class="placar-nome">{{ placarSessao.visitante }}</div>
+        <div class="placar-ponto">0</div>
+      </div>
+    </div>
+
+    <div
+      class="placar-cronometro"
+      *ngIf="placarSessao.cronometro"
+    >02:51:30</div>
+
+    <div
+      class="placar-tempo"
+      *ngIf="placarSessao.cronometro && placarSessao.periodo === 2"
+    >1° tempo</div>
+
+
+    <div
+      class="teclado botao"
+      [class.botao-duplo]="situacaoCronometro  === 'retornar'"
+    >
+      <app-botao
+        class="botao"
+        [botaoTexto]="situacaoCronometro"
+        (click)="botaoPrincipal()"
+      ></app-botao>
+
+      <app-botao
+        *ngIf="situacaoCronometro  === 'retornar'"
+        class="botao"
+        [botaoTexto]="btnParar"
+        (click)="botaoParar()"
+      ></app-botao>
+    </div>
   </div>
-
-
-
 </section>
-
-<button routerLink="/principal">principal</button>

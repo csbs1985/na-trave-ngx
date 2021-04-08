@@ -1,6 +1,9 @@
 .botao {
-  position: relative;
+  display: flex;
+  flex-direction: row;
   font-family: 'adineue-regular';
+  justify-content: center;
+  position: relative;
 
   button {
     background-color: $cor-primario;
@@ -51,8 +54,6 @@
 }
 
 .botao-duplo {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
 
   button {
@@ -63,6 +64,6 @@
 }
 
 .botao-desabilitado {
-  pointer-events: none;
   opacity: 0.5;
+  pointer-events: none;
 }
