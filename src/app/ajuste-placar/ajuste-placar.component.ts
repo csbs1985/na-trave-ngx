@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TipoRoute } from '../shared/enum/tipo-route.enum';
 import { StoragePlacar } from '../shared/models/storage-selecionae-equipe.model';
+import { FormatarHoraService } from '../shared/services/formatar-hora.service';
 import { StorageIntegracaoService } from '../shared/services/storage-intregacao.service';
 
 @Component({
@@ -31,7 +32,8 @@ export class AjustePlacarComponent implements OnInit {
 
   constructor(
     private route: Router,
-    private integracaoService: StorageIntegracaoService
+    private integracaoService: StorageIntegracaoService,
+    private formatarHora: FormatarHoraService
   ) { }
 
   ngOnInit(): void {
@@ -120,6 +122,9 @@ export class AjustePlacarComponent implements OnInit {
       if (!this.placar.duracao) {
         this.placar.duracao = 45;
       }
+
+      this.placar.duracao = this.formatarHora.converter(this.placar.duracao);
+
     }
   }
 
