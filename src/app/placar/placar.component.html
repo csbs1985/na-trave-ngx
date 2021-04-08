@@ -28,10 +28,10 @@
       *ngIf="placarSessao.cronometro && placarSessao.periodo === 2"
     >1° tempo</div>
 
-
     <div
       class="teclado botao"
       [class.botao-duplo]="situacaoCronometro  === 'retornar'"
+      *ngIf="placarSessao.cronometro"
     >
       <app-botao
         class="botao"
