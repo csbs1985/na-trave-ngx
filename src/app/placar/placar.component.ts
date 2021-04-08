@@ -15,6 +15,8 @@ export class PlacarComponent implements OnInit {
   cabecalhoTexto = 'Placar';
   situacaoCronometro: TipoCronometro = TipoCronometro.INICIAR;
 
+  readonly btnParar = TipoCronometro.PARAR;
+
   constructor(
     private integracaoService: StorageIntegracaoService
   ) { }
@@ -31,14 +33,16 @@ export class PlacarComponent implements OnInit {
     }
   }
 
-  botaoPrincipal(): TipoCronometro {
+  botaoPrincipal(): void {
     if (this.situacaoCronometro === TipoCronometro.INICIAR ||
       this.situacaoCronometro === TipoCronometro.RETORNAR) {
-      return this.situacaoCronometro = TipoCronometro.PAUSAR;
+      this.situacaoCronometro = TipoCronometro.PAUSAR;
+      return;
     }
 
     if (this.situacaoCronometro === TipoCronometro.PAUSAR) {
-      return this.situacaoCronometro = TipoCronometro.RETORNAR;
+      this.situacaoCronometro = TipoCronometro.RETORNAR;
+      return;
     }
   }
 
