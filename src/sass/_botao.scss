@@ -13,7 +13,6 @@
     font-family: 'adineue-regular';
     letter-spacing: $espaco-letra;
     line-height: $tamanho-g;
-    margin: $tamanho-m 0 $tamanho-m $tamanho-m;
     padding: 0 $tamanho-m;
     position: relative;
     text-decoration: none;
@@ -59,7 +58,6 @@
   button {
     align-self: flex-start;
     flex: 1 1 auto;
-    margin-right: $tamanho-m;
   }
 }
 

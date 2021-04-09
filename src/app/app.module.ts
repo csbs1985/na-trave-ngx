@@ -2,6 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { CountdownModule } from 'ngx-countdown';
 import { environment } from '../environments/environment';
 import { AjustePlacarModule } from './ajuste-placar/ajuste-placar.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,7 +29,8 @@ import { SharedModule } from './shared/shared.module';
     DefinirModule,
     AppRoutingModule,
     RouterModule,
-    AjustePlacarModule
+    AjustePlacarModule,
+    CountdownModule
   ],
   providers: [],
   bootstrap: [AppComponent],

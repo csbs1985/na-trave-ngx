@@ -1,6 +1,7 @@
 export enum TipoCronometro {
   INICIAR = 'iniciar',
-  PARAR = 'parar',
+  FINALIZAR = 'finalizar',
   PAUSAR = 'pausar',
-  RETORNAR = 'retornar'
+  RETORNAR = 'retornar',
+  REINICIAR = 'reiniciar'
 }

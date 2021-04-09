@@ -1,6 +1,7 @@
 .teclado {
   background-color: $cor-base;
   bottom: 0;
+  margin: $tamanho-m;
   position: absolute;
-  width: 100%;
+  width: calc(100% - 40px);
 }

@@ -21,12 +21,17 @@
     <div
       class="placar-cronometro"
       *ngIf="placarSessao.cronometro"
-    >02:51:30</div>
+    >
+      <countdown
+        #cd1
+        [config]="countdownConfig"
+      ></countdown>
+    </div>
 
     <div
       class="placar-tempo"
-      *ngIf="placarSessao.cronometro && placarSessao.periodo === 2"
-    >1° tempo</div>
+      *ngIf="placarSessao.cronometro && placarSessao.periodo >= 2"
+    >{{ periodo }}° tempo</div>
 
     <div
       class="teclado botao"
