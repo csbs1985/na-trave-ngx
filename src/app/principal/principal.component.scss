@@ -1,30 +1,29 @@
 @import '../../sass/styles.scss';
 
-section {
+.principal {
   background-color: $cor-primario;
   background-image: url('../../assets/images/banner.jpg');
   background-size: cover;
   height: 100%;
   position: relative;
 
-  .cabecalho {
+  &-cabecalho {
     background-color: $cor-base;
     padding: $tamanho-m;
     width: calc(100% - $tamanho-m);
   }
 
-  menu {
+  &-menu {
     bottom: 32px;
     position: absolute;
-    z-index: 2;
+    z-index: 1;
   }
-}
 
-.rodape {
-  background-color: $cor-primario;
-  bottom: 0;
-  height: 100px;
-  position: absolute;
-  width: 100%;
-  z-index: 1;
+  &-rodape {
+    background-color: $cor-primario;
+    bottom: 0;
+    height: 100px;
+    position: absolute;
+    width: 100%;
+  }
 }

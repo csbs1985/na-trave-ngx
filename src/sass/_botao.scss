@@ -17,7 +17,7 @@
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
-    word-spacing: 5px;
+    word-spacing: $tamanho-pp;
 
     .borda-botao {
       display: none;
@@ -26,10 +26,13 @@
 }
 
 .botao-secundario {
+  display: inline-block;
+
   button {
     background-color: $cor-base;
     color: $cor-primario;
-    margin-bottom: 0;
+    margin: 0 0 $tamanho-m $tamanho-m;
+    text-align: left;
   }
 
   .borda-botao {
@@ -37,9 +40,9 @@
     border: 1px solid $cor-base;
     border-width: 1px;
     height: 40px;
-    left: 22px;
+    left: 23px;
     position: absolute;
-    top: -10px;
+    top: 3px;
     width: calc(100% - 20px);
   }
 }
