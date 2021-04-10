@@ -60,13 +60,6 @@
       ></app-botao>
 
       <app-botao
-        *ngIf="situacaoCronometro  === 'retornar' && placarSessao.periodo === 1"
-        class="botao"
-        [botaoTexto]="btnFinalizar"
-        (click)="botaoFinalizar()"
-      ></app-botao>
-
-      <app-botao
         *ngIf="situacaoCronometro  === 'retornar'"
         class="botao"
         [botaoTexto]="btnFinalizar"

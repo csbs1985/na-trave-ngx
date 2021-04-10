@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CountdownComponent } from 'ngx-countdown';
 import { ModalService } from '../shared/components/modal/modal.service';
 import { TipoCronometro } from '../shared/enum/tipo-cronometro.enum';
+import { TipoRoute } from '../shared/enum/tipo-route.enum';
 import { StoragePlacar } from '../shared/models/storage-selecionae-equipe.model';
 import { StorageIntegracaoService } from '../shared/services/storage-intregacao.service';
 
@@ -35,7 +36,6 @@ export class PlacarComponent implements OnInit {
 
   ngOnInit(): void {
     this.popularPlacar();
-    this.modalService.isModalAberto = true;
   }
 
   @ViewChild(CountdownComponent) counter: CountdownComponent;
@@ -77,8 +77,6 @@ export class PlacarComponent implements OnInit {
 
   botaoFinalizar() {
     this.modalService.isModalAberto = true;
-    // this.situacaoCronometro = TipoCronometro.FINALIZAR;
-    // this.route.navigate(['/' + TipoRoute.PRINCIPAL]);
   }
 
   botaoReiniciar(): void {
@@ -87,6 +85,6 @@ export class PlacarComponent implements OnInit {
   }
 
   botaoConfirmar(): void {
-    console.log('confirmando');
+    this.route.navigate(['/' + TipoRoute.PRINCIPAL]);
   }
 }
