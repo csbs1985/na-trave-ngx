@@ -1,0 +1,38 @@
+@import '../../../../sass/styles.scss';
+
+.modal {
+  display: none;
+  z-index: 1000;
+
+  &-corpo {
+    background-color: $cor-base;
+    bottom: 0;
+    box-shadow: 0 0 3px $cor-secundario;
+    padding: $tamanho-m;
+    position: absolute;
+    width: calc(100% - 40px);
+    z-index: 9999;
+  }
+
+  &-titulo {
+    @include form-titulo;
+    font-size: 100%;
+    margin-bottom: $tamanho-m;
+    width: 100%;
+  }
+
+  &-fechar {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  &-texto {
+    @include form-descricao;
+    margin-bottom: $tamanho-m;
+  }
+}
+
+.modal-aberto {
+  display: block;
+}

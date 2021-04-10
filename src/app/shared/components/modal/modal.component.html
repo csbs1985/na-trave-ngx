@@ -1,0 +1,42 @@
+<section>
+  <div
+    class="modal"
+    [class.modal-aberto]="isModalAberto"
+  >
+
+    <div
+      class="overlay"
+      (click)="modalFechar()"
+    ></div>
+
+    <div class="modal-corpo">
+      <div class="modal-titulo">{{ titulo }}</div>
+
+      <div
+        class="modal-texto"
+        *ngIf="descricao"
+      >{{ descricao }}</div>
+
+      <img
+        class="modal-fechar"
+        (click)="modalFechar()"
+        src="../../../../assets/svg/cancelar.svg"
+        alt="cancelar"
+      >
+
+      <div class="botao botao-duplo modal-teclado">
+        <app-botao
+          class="botao botao-transparente"
+          [botaoTexto]="btnCancelar"
+          (click)="modalFechar()"
+        ></app-botao>
+
+        <app-botao
+          class="botao"
+          [botaoTexto]="btnConfirmar"
+          (click)="modalConfirmar()"
+        ></app-botao>
+      </div>
+    </div>
+  </div>
+</section>

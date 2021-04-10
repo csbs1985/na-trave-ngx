@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { CountdownComponent } from 'ngx-countdown';
+import { ModalService } from '../shared/components/modal/modal.service';
 import { TipoCronometro } from '../shared/enum/tipo-cronometro.enum';
-import { TipoRoute } from '../shared/enum/tipo-route.enum';
 import { StoragePlacar } from '../shared/models/storage-selecionae-equipe.model';
 import { StorageIntegracaoService } from '../shared/services/storage-intregacao.service';
 
@@ -12,24 +12,30 @@ import { StorageIntegracaoService } from '../shared/services/storage-intregacao.
   styleUrls: ['./placar.component.scss']
 })
 export class PlacarComponent implements OnInit {
-
   placarSessao: StoragePlacar;
 
   cabecalhoTexto = 'Placar';
   periodo = 1;
   situacaoCronometro: TipoCronometro = TipoCronometro.INICIAR;
 
-  readonly btnParar = TipoCronometro.FINALIZAR;
+  readonly btnIniciar = TipoCronometro.INICIAR;
+  readonly btnPausar = TipoCronometro.PAUSAR;
+  readonly btnRetornar = TipoCronometro.RETORNAR;
+  readonly btnFinalizar = TipoCronometro.FINALIZAR;
+  readonly modalTitulo = 'Finalizar';
+  readonly modalTexto = 'Deseja realmente finalizar a partida?';
 
   countdownConfig: any;
 
   constructor(
     private integracaoService: StorageIntegracaoService,
-    private route: Router
+    private route: Router,
+    private modalService: ModalService
   ) { }
 
   ngOnInit(): void {
     this.popularPlacar();
+    this.modalService.isModalAberto = true;
   }
 
   @ViewChild(CountdownComponent) counter: CountdownComponent;
@@ -50,41 +56,37 @@ export class PlacarComponent implements OnInit {
       this.countdownConfig = {
         leftTime: this.placarSessao.duracao,
         demand: true
-      }
+      };
     }
   }
 
-  botaoPrincipal(): void {
-    if (this.situacaoCronometro === TipoCronometro.INICIAR) {
-      this.situacaoCronometro = TipoCronometro.PAUSAR;
-      this.counter.begin();
-      return;
-    }
-
-    if (this.situacaoCronometro === TipoCronometro.PAUSAR) {
-      this.situacaoCronometro = TipoCronometro.RETORNAR;
-      this.counter.pause();
-      return;
-    }
-
-    if (this.situacaoCronometro === TipoCronometro.RETORNAR) {
-      this.situacaoCronometro = TipoCronometro.PAUSAR;
-      this.counter.begin();
-      return;
-    }
+  botaoIniciar(): void {
+    this.situacaoCronometro = TipoCronometro.PAUSAR;
+    this.counter.begin();
   }
 
-  botaoParar(): void {
-    if (this.placarSessao.periodo === 1) {
-      this.finalizarPlacar();
-    } else {
-      this.situacaoCronometro = TipoCronometro.REINICIAR;
-      this.periodo = 2;
-    }
+  botaoPausar(): void {
+    this.situacaoCronometro = TipoCronometro.RETORNAR;
+    this.counter.pause();
   }
 
-  finalizarPlacar() {
-    this.situacaoCronometro = TipoCronometro.FINALIZAR;
-    this.route.navigate(['/' + TipoRoute.PRINCIPAL]);
+  botaoRetornar(): void {
+    this.situacaoCronometro = TipoCronometro.PAUSAR;
+    this.counter.begin();
+  }
+
+  botaoFinalizar() {
+    this.modalService.isModalAberto = true;
+    // this.situacaoCronometro = TipoCronometro.FINALIZAR;
+    // this.route.navigate(['/' + TipoRoute.PRINCIPAL]);
+  }
+
+  botaoReiniciar(): void {
+    this.situacaoCronometro = TipoCronometro.PAUSAR;
+    this.counter.restart();
+  }
+
+  botaoConfirmar(): void {
+    console.log('confirmando');
   }
 }

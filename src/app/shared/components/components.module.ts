@@ -6,6 +6,7 @@ import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { FormRadioComponent } from './form-radio/form-radio.component';
 import { FormTextoComponent } from './form-texto/form-texto.component';
 import { FormToggleComponent } from './form-toggle/form-toggle.component';
+import { ModalComponent } from './modal/modal.component';
 import { SelecionarEsporteComponent } from './selecionar-esporte/selecionar-esporte.component';
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SelecionarEsporteComponent } from './selecionar-esporte/selecionar-espo
     SelecionarEsporteComponent,
     FormTextoComponent,
     FormToggleComponent,
-    FormRadioComponent
+    FormRadioComponent,
+    ModalComponent
   ],
   exports: [
     BotaoComponent,
@@ -25,7 +27,8 @@ import { SelecionarEsporteComponent } from './selecionar-esporte/selecionar-espo
     SelecionarEsporteComponent,
     FormTextoComponent,
     FormToggleComponent,
-    FormRadioComponent
+    FormRadioComponent,
+    ModalComponent
   ],
   imports: [CommonModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

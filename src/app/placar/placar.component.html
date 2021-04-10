@@ -39,17 +39,45 @@
       *ngIf="placarSessao.cronometro"
     >
       <app-botao
+        *ngIf="situacaoCronometro  === 'iniciar'"
         class="botao"
-        [botaoTexto]="situacaoCronometro"
-        (click)="botaoPrincipal()"
+        [botaoTexto]="btnIniciar"
+        (click)="botaoIniciar()"
+      ></app-botao>
+
+      <app-botao
+        *ngIf="situacaoCronometro  === 'pausar'"
+        class="botao"
+        [botaoTexto]="btnPausar"
+        (click)="botaoPausar()"
       ></app-botao>
 
       <app-botao
         *ngIf="situacaoCronometro  === 'retornar'"
         class="botao"
-        [botaoTexto]="btnParar"
-        (click)="botaoParar()"
+        [botaoTexto]="btnRetornar"
+        (click)="botaoRetornar()"
+      ></app-botao>
+
+      <app-botao
+        *ngIf="situacaoCronometro  === 'retornar' && placarSessao.periodo === 1"
+        class="botao"
+        [botaoTexto]="btnFinalizar"
+        (click)="botaoFinalizar()"
+      ></app-botao>
+
+      <app-botao
+        *ngIf="situacaoCronometro  === 'retornar'"
+        class="botao"
+        [botaoTexto]="btnFinalizar"
+        (click)="botaoFinalizar()"
       ></app-botao>
     </div>
   </div>
 </section>
+
+<app-modal
+  [titulo]="modalTitulo"
+  [descricao]="modalTexto"
+  (modalResultado)="botaoConfirmar()"
+></app-modal>
