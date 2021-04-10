@@ -131,4 +131,8 @@ export class AjustePlacarComponent implements OnInit {
   private salvarDados(): void {
     this.integracaoService.salvarPlacar(this.placar);
   }
+
+  voltar(): void {
+    this.integracaoService.salvarPlacar(null);
+  }
 }

@@ -32,7 +32,10 @@
     </div>
 
     <div class="teclado botao botao-duplo">
-      <app-botao-voltar class="botao botao-transparente"></app-botao-voltar>
+      <app-botao-voltar
+        class="botao botao-transparente"
+        (click)="voltar()"
+      ></app-botao-voltar>
 
       <app-botao
         class="botao"

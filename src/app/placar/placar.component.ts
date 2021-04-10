@@ -24,8 +24,8 @@ export class PlacarComponent implements OnInit {
   readonly btnRetornar = TipoCronometro.RETORNAR;
   readonly btnFinalizar = TipoCronometro.FINALIZAR;
   readonly modalTitulo = 'Finalizar';
-  readonly modalTexto = 'Deseja realmente finalizar a partida?';
 
+  modalTexto: string;
   countdownConfig: any;
 
   constructor(
@@ -76,6 +76,13 @@ export class PlacarComponent implements OnInit {
   }
 
   botaoFinalizar() {
+    if (this.placarSessao.periodo === 2 &&
+      this.periodo === 1) {
+      this.modalTexto = 'Deseja realmente finalizar 1° tempo?';
+      this.situacaoCronometro = TipoCronometro.INICIAR;
+    } else {
+      this.modalTexto = 'Deseja realmente finalizar a partida?';
+    }
     this.modalService.isModalAberto = true;
   }
 
@@ -85,6 +92,14 @@ export class PlacarComponent implements OnInit {
   }
 
   botaoConfirmar(): void {
+    if (this.placarSessao.periodo === 1 ||
+      (this.placarSessao.periodo === 2 && this.periodo === 2)) {
+      this.finalizarParida();
+    }
+    this.periodo++;
+  }
+
+  finalizarParida(): void {
     this.integracaoService.salvarPlacar(null);
     this.route.navigate(['/' + TipoRoute.PRINCIPAL]);
   }
