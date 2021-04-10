@@ -85,6 +85,7 @@ export class PlacarComponent implements OnInit {
   }
 
   botaoConfirmar(): void {
+    this.integracaoService.salvarPlacar(null);
     this.route.navigate(['/' + TipoRoute.PRINCIPAL]);
   }
 }
