@@ -4,8 +4,11 @@
   &-caixa {
     border: 2px outset $cor-primario;
     box-shadow: -5px 5px 0;
-    font-family: 'dotMatrix';
+    font-family: 'v5-prophits';
+    font-size: 30px;
+    line-height: 110%;
     margin: 0 $tamanho-m;
+    letter-spacing: 0;
   }
 
   &-placar,
@@ -18,11 +21,6 @@
   &-equipes {
     flex: 1 1 auto;
     margin-right: $tamanho-m;
-  }
-
-  p {
-    font-size: $tamanho-g;
-    line-height: $tamanho-g;
   }
 
   p:first-of-type {

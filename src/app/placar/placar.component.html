@@ -26,8 +26,8 @@
       >
         <p>
           <countdown
-            #cd1
             [config]="countdownConfig"
+            (event)="zerarContador($event)"
           ></countdown>
         </p>
 

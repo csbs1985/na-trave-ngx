@@ -57,8 +57,10 @@ export class PlacarComponent implements OnInit {
       this.cabecalhoTexto = this.cabecalhoTexto + ' e cronômetro';
 
       this.countdownConfig = {
-        leftTime: this.placarSessao.duracao,
-        demand: true
+        leftTime: 3,
+        // leftTime: this.placarSessao.duracao,
+        demand: true,
+        format: 'mm:ss'
       };
     }
   }
@@ -106,5 +108,11 @@ export class PlacarComponent implements OnInit {
   finalizarParTida(): void {
     this.integracaoService.salvarPlacar(null);
     this.route.navigate(['/' + TipoRoute.PRINCIPAL]);
+  }
+
+  zerarContador(alarme): void {
+    if (alarme.text === '00:00') {
+      console.log("zerou!");
+    }
   }
 }
