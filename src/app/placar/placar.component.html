@@ -36,7 +36,6 @@
     </div>
   </div>
 
-
   <div
     class="teclado botao"
     [class.botao-duplo]="situacaoCronometro  === 'retornar'"
@@ -73,7 +72,6 @@
 </section>
 
 <app-modal
-  [titulo]="modalTitulo"
-  [descricao]="modalTexto"
-  (modalResultado)="botaoConfirmar()"
+  [modalObject]="modalObject"
+  (modalResultado)="modalResultado($event)"
 ></app-modal>

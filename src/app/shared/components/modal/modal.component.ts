@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Modal } from '../../models/modal.module';
 import { ModalService } from './modal.service';
 
 @Component({
@@ -7,12 +8,10 @@ import { ModalService } from './modal.service';
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent {
-  @Input() titulo: string;
-  @Input() descricao?: string;
+  @Input() modalObject: Modal;
   @Output() modalResultado = new EventEmitter();
 
   readonly btnCancelar = 'cancelar';
-  readonly btnConfirmar = 'confirmar';
 
   constructor(
     private modalService: ModalService
@@ -24,7 +23,7 @@ export class ModalComponent {
 
   modalConfirmar() {
     this.modalFechar();
-    this.modalResultado.emit();
+    this.modalResultado.emit(this.modalObject.botao);
   }
 
   get isModalAberto(): boolean {

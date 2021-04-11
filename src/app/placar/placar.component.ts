@@ -4,7 +4,9 @@ import { CountdownComponent } from 'ngx-countdown';
 import { ModalService } from '../shared/components/modal/modal.service';
 import { TipoCronometro } from '../shared/enum/tipo-cronometro.enum';
 import { TipoRoute } from '../shared/enum/tipo-route.enum';
+import { Modal } from '../shared/models/modal.module';
 import { StoragePlacar } from '../shared/models/storage-selecionae-equipe.model';
+import { RandomService } from '../shared/services/random.service';
 import { StorageIntegracaoService } from '../shared/services/storage-intregacao.service';
 
 @Component({
@@ -13,28 +15,35 @@ import { StorageIntegracaoService } from '../shared/services/storage-intregacao.
   styleUrls: ['./placar.component.scss']
 })
 export class PlacarComponent implements OnInit {
-  placarSessao: StoragePlacar;
-
-  cabecalhoTexto = 'Placar';
-  periodo = 1;
-  situacaoCronometro: TipoCronometro = TipoCronometro.INICIAR;
-
   readonly btnIniciar = TipoCronometro.INICIAR;
   readonly btnPausar = TipoCronometro.PAUSAR;
   readonly btnRetornar = TipoCronometro.RETORNAR;
   readonly btnFinalizar = TipoCronometro.FINALIZAR;
-  readonly modalTitulo = 'Finalizar';
+
+  cabecalhoTexto = 'Placar';
 
   mandantePonto = 0;
   visitantePonto = 0;
+  periodo = 1;
 
-  modalTexto: string;
+  modaltexto: string;
+
+  modalObject: Modal = {
+    botao: 'ok',
+    texto: '',
+    titulo: 'Finalizar'
+  }
+
   countdownConfig: any;
+
+  placarSessao: StoragePlacar;
+  situacaoCronometro: TipoCronometro = TipoCronometro.INICIAR;
 
   constructor(
     private integracaoService: StorageIntegracaoService,
     private route: Router,
-    private modalService: ModalService
+    private modalService: ModalService,
+    private randomService: RandomService
   ) { }
 
   ngOnInit(): void {
@@ -83,10 +92,16 @@ export class PlacarComponent implements OnInit {
   botaoFinalizar() {
     if (this.placarSessao.periodo === 2 &&
       this.periodo === 1) {
-      this.modalTexto = 'Deseja realmente finalizar 1° tempo?';
+      this.modaltexto = 'Deseja realmente finalizar 1° tempo?';
       this.situacaoCronometro = TipoCronometro.INICIAR;
     } else {
-      this.modalTexto = 'Deseja realmente finalizar a partida?';
+      this.modaltexto = 'Deseja realmente finalizar a partida?';
+    }
+
+    this.modalObject = {
+      botao: 'confirmar',
+      texto: this.modaltexto,
+      titulo: 'Finalizar'
     }
     this.modalService.isModalAberto = true;
   }
@@ -96,13 +111,18 @@ export class PlacarComponent implements OnInit {
     this.counter.restart();
   }
 
-  botaoConfirmar(): void {
+  modalResultado(resultado): void {
+    this.modalConfirmar();
+  }
+
+  modalConfirmar(): void {
     if (this.placarSessao.periodo === 1 ||
       (this.placarSessao.periodo === 2 && this.periodo === 2)) {
       this.finalizarParTida();
     }
     this.periodo++;
     this.counter.restart();
+    this.situacaoCronometro = TipoCronometro.INICIAR;
   }
 
   finalizarParTida(): void {
@@ -112,7 +132,13 @@ export class PlacarComponent implements OnInit {
 
   zerarContador(alarme): void {
     if (alarme.text === '00:00') {
-      console.log("zerou!");
+
+      this.modalObject = {
+        botao: 'ok',
+        texto: this.randomService.tituloFimPartida(),
+        titulo: 'fim de jogo'
+      }
+      this.modalService.isModalAberto = true;
     }
   }
 }

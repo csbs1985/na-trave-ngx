@@ -10,12 +10,12 @@
     ></div>
 
     <div class="modal-corpo">
-      <div class="modal-titulo">{{ titulo }}</div>
+      <div class="modal-titulo">{{ modalObject.titulo }}</div>
 
       <div
         class="modal-texto"
-        *ngIf="descricao"
-      >{{ descricao }}</div>
+        *ngIf="modalObject.texto"
+      >{{ modalObject.texto }}</div>
 
       <img
         class="modal-fechar"
@@ -24,8 +24,12 @@
         alt="cancelar"
       >
 
-      <div class="botao botao-duplo modal-teclado">
+      <div
+        class="botao modal-teclado"
+        [class.botao-duplo]="modalObject.botao === 'confirmar'"
+      >
         <app-botao
+          *ngIf="modalObject.botao === 'confirmar'"
           class="botao botao-transparente"
           [botaoTexto]="btnCancelar"
           (click)="modalFechar()"
@@ -33,7 +37,7 @@
 
         <app-botao
           class="botao"
-          [botaoTexto]="btnConfirmar"
+          [botaoTexto]="modalObject.botao"
           (click)="modalConfirmar()"
         ></app-botao>
       </div>
