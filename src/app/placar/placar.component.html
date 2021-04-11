@@ -2,70 +2,73 @@
   <div class="placar">
     <app-cabecalho [cabecalhoTexto]="cabecalhoTexto"></app-cabecalho>
 
-    <div class="placar-banner"></div>
+    <div class="placar-caixa">
+      <div class="placar-placar">
+        <div class="placar-equipes">
+          <p>{{ placarSessao.mandante }}</p>
+          <p>{{ placarSessao.visitante }}</p>
+        </div>
 
-    <div class="placar-placar">
-      <div class="placar-esquerdo">
-        <div class="placar-nome">{{ placarSessao.mandante }}</div>
-        <div class="placar-ponto">9</div>
+        <div class="placar-pontos">
+          <p>{{ mandantePonto }}</p>
+          <p>{{ visitantePonto }}</p>
+        </div>
       </div>
 
-      <div class="placar-centro">x</div>
+      <div
+        class="placar-divisor"
+        *ngIf="placarSessao.cronometro"
+      ></div>
 
-      <div class="placar-direito">
-        <div class="placar-nome">{{ placarSessao.visitante }}</div>
-        <div class="placar-ponto">0</div>
+      <div
+        class="placar-cronometro"
+        *ngIf="placarSessao.cronometro"
+      >
+        <p>
+          <countdown
+            #cd1
+            [config]="countdownConfig"
+          ></countdown>
+        </p>
+
+        <p *ngIf="placarSessao.cronometro && placarSessao.periodo >= 2">{{ periodo }}t</p>
       </div>
     </div>
+  </div>
 
-    <div
-      class="placar-cronometro"
-      *ngIf="placarSessao.cronometro"
-    >
-      <countdown
-        #cd1
-        [config]="countdownConfig"
-      ></countdown>
-    </div>
 
-    <div
-      class="placar-tempo"
-      *ngIf="placarSessao.cronometro && placarSessao.periodo >= 2"
-    >{{ periodo }}° tempo</div>
+  <div
+    class="teclado botao"
+    [class.botao-duplo]="situacaoCronometro  === 'retornar'"
+    *ngIf="placarSessao.cronometro"
+  >
+    <app-botao
+      *ngIf="situacaoCronometro  === 'iniciar'"
+      class="botao"
+      [botaoTexto]="btnIniciar"
+      (click)="botaoIniciar()"
+    ></app-botao>
 
-    <div
-      class="teclado botao"
-      [class.botao-duplo]="situacaoCronometro  === 'retornar'"
-      *ngIf="placarSessao.cronometro"
-    >
-      <app-botao
-        *ngIf="situacaoCronometro  === 'iniciar'"
-        class="botao"
-        [botaoTexto]="btnIniciar"
-        (click)="botaoIniciar()"
-      ></app-botao>
+    <app-botao
+      *ngIf="situacaoCronometro  === 'pausar'"
+      class="botao"
+      [botaoTexto]="btnPausar"
+      (click)="botaoPausar()"
+    ></app-botao>
 
-      <app-botao
-        *ngIf="situacaoCronometro  === 'pausar'"
-        class="botao"
-        [botaoTexto]="btnPausar"
-        (click)="botaoPausar()"
-      ></app-botao>
+    <app-botao
+      *ngIf="situacaoCronometro  === 'retornar'"
+      class="botao"
+      [botaoTexto]="btnRetornar"
+      (click)="botaoRetornar()"
+    ></app-botao>
 
-      <app-botao
-        *ngIf="situacaoCronometro  === 'retornar'"
-        class="botao"
-        [botaoTexto]="btnRetornar"
-        (click)="botaoRetornar()"
-      ></app-botao>
-
-      <app-botao
-        *ngIf="situacaoCronometro  === 'retornar'"
-        class="botao"
-        [botaoTexto]="btnFinalizar"
-        (click)="botaoFinalizar()"
-      ></app-botao>
-    </div>
+    <app-botao
+      *ngIf="situacaoCronometro  === 'retornar'"
+      class="botao"
+      [botaoTexto]="btnFinalizar"
+      (click)="botaoFinalizar()"
+    ></app-botao>
   </div>
 </section>
 

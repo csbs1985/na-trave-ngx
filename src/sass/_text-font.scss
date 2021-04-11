@@ -9,6 +9,11 @@
 }
 
 @font-face {
-  font-family: lcd;
-  src: url('../assets/fonts/lcd.TTF') format("opentype");
+  font-family: dotMatrix;
+  src: url('../assets/fonts/dotMatrix.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: dotMatrixBold;
+  src: url('../assets/fonts/dotMatrixBold.ttf') format("truetype");
 }

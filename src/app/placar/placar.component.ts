@@ -25,6 +25,9 @@ export class PlacarComponent implements OnInit {
   readonly btnFinalizar = TipoCronometro.FINALIZAR;
   readonly modalTitulo = 'Finalizar';
 
+  mandantePonto = 0;
+  visitantePonto = 0;
+
   modalTexto: string;
   countdownConfig: any;
 
@@ -94,12 +97,14 @@ export class PlacarComponent implements OnInit {
   botaoConfirmar(): void {
     if (this.placarSessao.periodo === 1 ||
       (this.placarSessao.periodo === 2 && this.periodo === 2)) {
-      this.finalizarParida();
+      this.finalizarParTida();
     }
     this.periodo++;
+    this.countdownConfig.leftTime = this.placarSessao.duracao;
+    this.counter.begin();
   }
 
-  finalizarParida(): void {
+  finalizarParTida(): void {
     this.integracaoService.salvarPlacar(null);
     this.route.navigate(['/' + TipoRoute.PRINCIPAL]);
   }

@@ -1,60 +1,48 @@
 @import '../../sass/styles.scss';
 
 .placar {
-  &-banner {
-    background-image: url('../../assets/images/placar.jpg');
-    background-position: 50% 80%;
-    background-size: cover;
-    height: 140px;
-    position: relative;
-    width: 100%;
+  &-caixa {
+    border: 2px outset $cor-primario;
+    box-shadow: -5px 5px 0;
+    font-family: 'dotMatrix';
+    margin: 0 $tamanho-m;
   }
 
-  &-placar {
-    align-items: center;
+  &-placar,
+  &-cronometro {
     display: flex;
-    margin-top: $tamanho-g;
-    width: 100%;
+    padding: $tamanho-p $tamanho-m;
+    width: calc(100% - $tamanho-g);
   }
 
-  &-esquerdo,
-  &-direito {
+  &-equipes {
     flex: 1 1 auto;
+    margin-right: $tamanho-m;
   }
 
-  &-esquerdo {
-    text-align: right;
+  p {
+    font-size: $tamanho-g;
+    line-height: $tamanho-g;
   }
 
-  &-centro {
-    flex: 0 1 auto;
-    margin: 0 $tamanho-p;
+  p:first-of-type {
+    margin-bottom: $tamanho-p;
   }
 
-  &-ponto {
-    font-family: 'lcd';
-    font-size: 90px;
-    height: 100%;
-    line-height: 100%;
-  }
-
-  &-cronometro,
-  &-tempo {
-    text-align: center;
-    width: 100%;
+  &-divisor {
+    border-top: 2px solid $cor-primario;
+    margin: 0 $tamanho-m;
   }
 
   &-cronometro {
-    font-family: 'lcd';
-    font-size: $tamanho-g;
-    line-height: 100%;
-  }
+    p {
+      flex: 0 1 auto;
+      padding: 0;
+    }
 
-  &-botoes {
-    background-color: blue;
-    bottom: 0;
-    height: 60px;
-    position: absolute;
-    width: 100%;
+    p:first-of-type {
+      flex: 1 1 auto;
+      margin: 0;
+    }
   }
 }
