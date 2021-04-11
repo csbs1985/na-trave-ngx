@@ -100,8 +100,7 @@ export class PlacarComponent implements OnInit {
       this.finalizarParTida();
     }
     this.periodo++;
-    this.countdownConfig.leftTime = this.placarSessao.duracao;
-    this.counter.begin();
+    this.counter.restart();
   }
 
   finalizarParTida(): void {
