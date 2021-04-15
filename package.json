@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "web": "rm -rf dist && ng build --prod && rm -rf .firebase && firebase deploy"
+    "web": "rm -rf www && ng build --prod && rm -rf .firebase && firebase deploy"
   },
   "private": true,
   "dependencies": {
