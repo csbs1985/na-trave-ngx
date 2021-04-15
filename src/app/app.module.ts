@@ -13,6 +13,7 @@ import { PlacarModule } from './placar/placar.module';
 import { PrincipalModule } from './principal/principal.module';
 import { SelecionarEquipeModule } from './selecionar-equipe/selecionar-equipe.module';
 import { SharedModule } from './shared/shared.module';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     RouterModule,
     AjustePlacarModule,
-    CountdownModule
+    CountdownModule,
+    IonicModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],

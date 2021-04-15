@@ -32,7 +32,7 @@ export class PlacarComponent implements OnInit {
     botao: 'ok',
     texto: '',
     titulo: 'Finalizar'
-  }
+  };
 
   countdownConfig: any;
 
