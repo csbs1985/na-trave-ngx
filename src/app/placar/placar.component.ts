@@ -66,8 +66,8 @@ export class PlacarComponent implements OnInit {
       this.cabecalhoTexto = this.cabecalhoTexto + ' e cronômetro';
 
       this.countdownConfig = {
-        leftTime: 3,
-        // leftTime: this.placarSessao.duracao,
+        // leftTime: 3,
+        leftTime: this.placarSessao.duracao,
         demand: true,
         format: 'mm:ss'
       };
