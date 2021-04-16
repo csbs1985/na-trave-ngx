@@ -14,7 +14,7 @@
     color: $cor-base;
     display: inline-block;
     font-family: 'adineue-regular';
-    height: $botao-tamanho;
+    height: $tamanho-g;
     letter-spacing: $espaco-letra;
     padding: 0 $tamanho-m;
     position: relative;
@@ -35,7 +35,6 @@
 
 .botao-buscar {
   button {
-
     background-image: url('../assets/svg/buscar.svg');
     background-repeat: no-repeat;
     text-align: left;
@@ -51,6 +50,7 @@
     background-color: $cor-base;
     background-image: url('../assets/svg/seta.svg');
     color: $cor-primaria;
+    height: $botao-tamanho;
     margin-bottom: $tamanho-m;
     text-align: left;
     width: 100%;
