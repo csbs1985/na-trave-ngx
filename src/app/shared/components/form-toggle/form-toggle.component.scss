@@ -71,10 +71,9 @@
       }
 
       &.toggle-right+label {
-        margin-left: -5px;
-
         &:after {
           left: -100%;
+          width: 100%;
         }
       }
 

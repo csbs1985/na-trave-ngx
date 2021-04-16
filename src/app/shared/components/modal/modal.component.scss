@@ -13,12 +13,11 @@
     z-index: 9999;
   }
 
-  &-inveite {
+  &-infeite {
     background-color: $cor-secundaria;
     height: $tamanho-pp;
-    width: $tamanho-g;
-    align-self: center;
     margin: 0 auto $tamanho-m;
+    width: $tamanho-g;
   }
 
   &-titulo {
