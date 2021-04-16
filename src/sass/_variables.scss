@@ -1,6 +1,6 @@
 $cor-base: #ffffff;
-$cor-primario: #000000;
-$cor-secundario: #BBBBBC;
+$cor-primaria: #000000;
+$cor-secundaria: #BBBBBC;
 
 $tamanho-pp: 4px;
 $tamanho-p: 10px;
@@ -8,15 +8,15 @@ $tamanho-m: 20px;
 $tamanho-g: 40px;
 $tamanho-gg: 60px;
 
-$espaco-letra: 1px;
+$espaco-letra: 0.5px;
 
-$texto-sombra: 3px 4px 5px $cor-primario;
+$texto-sombra: 3px 4px 5px $cor-primaria;
 
-$borda-p: 1px solid $cor-secundario;
-$borda-m: 2px solid $cor-primario;
+$borda-p: 1px solid $cor-secundaria;
+$borda-m: 2px solid $cor-primaria;
 
 $opacidade: 0.7;
 
-$sombra-borda: 0 0 3px $cor-secundario;
+$sombra-borda: 0 0 3px $cor-secundaria;
 
-$botao-tamanho: $tamanho-g;
+$botao-tamanho: 50px;

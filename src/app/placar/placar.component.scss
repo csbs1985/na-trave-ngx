@@ -2,7 +2,7 @@
 
 .placar {
   &-caixa {
-    border: 2px outset $cor-primario;
+    border: 2px outset $cor-primaria;
     box-shadow: -5px 5px 0;
     // font-family: 'v5-prophits';
     font-size: 30px;
@@ -27,7 +27,7 @@
   }
 
   &-divisor {
-    border-top: 2px solid $cor-primario;
+    border-top: 2px solid $cor-primaria;
     margin: 0 $tamanho-m;
   }
 

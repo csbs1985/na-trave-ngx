@@ -1,21 +1,27 @@
 <section class="principal">
-  <div class="principal-cabecalho">
-    <img
-      src="../../assets/svg/logo.svg"
-      alt="na trave"
-    >
+
+  <img
+    src="../../assets/svg/logo.svg"
+    alt="logo"
+  >
+
+  <div class="principal-buscar botao-buscar">
+    <app-botao
+      class="botao"
+      [botaoRota]="buscaBatao.rota"
+      [botaoTexto]="buscaBatao.texto"
+      (cliqueBotao)="selecionarPagina($event)"
+    ></app-botao>
   </div>
 
   <menu class="principal-menu">
     <div *ngFor="let item of menuPrincipal">
       <app-botao
-        class="botao botao-secundario"
+        class="botao botao-menu"
         [botaoRota]="item.rota"
         [botaoTexto]="item.texto"
         (cliqueBotao)="selecionarPagina($event)"
       ></app-botao>
     </div>
   </menu>
-
-  <div class="principal-rodape"></div>
 </section>

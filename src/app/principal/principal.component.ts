@@ -10,18 +10,23 @@ import { StotageService } from '../shared/services/stotage.service';
 export class PrincipalComponent implements OnInit {
   menuPrincipal = [
     {
+      rota: 'selecionar-equipe',
+      texto: 'selecionar os times'
+    },
+    {
       rota: 'ajuste-placar',
       texto: 'placar e cronômetro'
     },
     {
-      rota: 'selecionar-equipe',
-      texto: 'selecionar times'
-    },
-    {
       rota: 'partida',
-      texto: 'gerenciar partida'
+      texto: 'partida completa'
     }
   ];
+
+  buscaBatao = {
+    rota: 'buscar-partida',
+    texto: 'buscar partida'
+  }
 
   constructor(
     private route: Router,
@@ -35,7 +40,7 @@ export class PrincipalComponent implements OnInit {
   iniciarProjeto(): void {
     const data = this.sessao.dados;
     if (!data.partida) {
-      data.partida = { teste: ' testeeeeee' };
+      data.partida = {};
     }
     if (!data.placar) {
       data.placar = {};

@@ -1,4 +1,6 @@
-<svg id="logo" xmlns="http://www.w3.org/2000/svg" width="147" height="40" viewBox="0 0 147 40">
-  <rect id="Retângulo_7" data-name="Retângulo 7" width="147" height="40"/>
-  <path id="Caminho_2" data-name="Caminho 2" d="M9.34,15h3.38V1.3H9.74V10L4.22,1.3H.84V15H3.82V6.32ZM22.1,9.9H18.56l1.76-5.34ZM23.8,15h3.34L22.32,1.3h-3.8L13.68,15h3.18l.78-2.36h5.38Zm22.94,0V4.14h2.08V1.3H23.8l1.1,2.84H43.64V15Zm8.6-10.86A1.8,1.8,0,0,1,57.4,5.98c0,1.06-.82,1.82-2.16,1.82H53.06V4.14ZM57.1,15h4.04l-4.36-4.76a4.405,4.405,0,0,0,3.74-4.38A4.369,4.369,0,0,0,55.8,1.3H49.96V15h3.1V10.36h.02ZM69.96,9.9H66.42l1.76-5.34Zm1.7,5.1H75L70.18,1.3h-3.8L61.54,15h3.18l.78-2.36h5.38Zm8.92,0L85.34,1.3h-3.2L78.76,11.64,75.38,1.3H72.04L76.78,15Zm5.72,0H96.34V12.2H89.4V9.4h6.4V6.68H89.4V4.1h6.92V1.3H86.3Z" transform="translate(26 10)" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="166" viewBox="0 0 40 166">
+  <g id="logo" transform="translate(-269 574) rotate(-90)">
+    <rect id="Retângulo_35" data-name="Retângulo 35" width="166" height="40" transform="translate(408 269)"/>
+    <text id="na_trave" data-name="na trave" transform="translate(446 296)" fill="#fff" font-size="20" font-family="adineuePRO-Bold, adineue PRO Bold" font-weight="700"><tspan x="0" y="0">NA TRAVE</tspan></text>
+  </g>
 </svg>

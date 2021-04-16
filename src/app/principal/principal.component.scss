@@ -1,29 +1,28 @@
 @import '../../sass/styles.scss';
 
 .principal {
-  background-color: $cor-primario;
-  background-image: url('../../assets/images/principal.png');
-  background-size: cover;
+  background-color: $cor-base;
+  display: flex;
+  flex-direction: column;
   height: 100%;
+  justify-content: flex-end;
   position: relative;
+  width: 100%;
 
-  &-cabecalho {
-    background-color: $cor-base;
+  img {
+    height: 166px;
+    position: absolute;
+    top: $tamanho-m;
+  }
+
+  &-buscar {
     padding: $tamanho-m;
-    width: calc(100% - $tamanho-m);
   }
 
   &-menu {
-    bottom: 32px;
-    position: absolute;
-    z-index: 1;
-  }
-
-  &-rodape {
-    background-color: $cor-primario;
-    bottom: 0;
-    height: 100px;
-    position: absolute;
+    background-color: $cor-primaria;
+    padding: $tamanho-m;
+    padding-bottom: 0;
     width: 100%;
   }
 }

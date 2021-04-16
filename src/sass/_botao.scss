@@ -1,3 +1,5 @@
+@import './mixins';
+
 .botao {
   display: flex;
   flex-direction: row;
@@ -6,7 +8,8 @@
   position: relative;
 
   button {
-    background-color: $cor-primario;
+    @include icone-botao;
+    background-color: $cor-primaria;
     border: 0;
     color: $cor-base;
     display: inline-block;
@@ -25,33 +28,35 @@
   }
 }
 
-.botao-secundario {
-  display: inline-block;
+.botao-buscar {
+  button {
+
+    background-image: url('../assets/svg/buscar.svg');
+    background-repeat: no-repeat;
+    text-align: left;
+    width: 100%;
+  }
+}
+
+.botao-menu {
+  display: block;
 
   button {
     background-color: $cor-base;
-    color: $cor-primario;
-    margin: 0 0 $tamanho-m $tamanho-m;
+    background-image: url('../assets/svg/seta.svg');
+    color: $cor-primaria;
+    font-size: 16px;
+    margin-bottom: $tamanho-m;
     text-align: left;
-  }
-
-  .borda-botao {
-    background-color: transparent;
-    border: 1px solid $cor-base;
-    border-width: 1px;
-    height: 40px;
-    left: 23px;
-    position: absolute;
-    top: 3px;
-    width: calc(100% - 20px);
+    width: 100%;
   }
 }
 
 .botao-transparente {
   button {
     background-color: $cor-base;
-    border: 1px solid $cor-primario;
-    color: $cor-primario;
+    border: 1px solid $cor-primaria;
+    color: $cor-primaria;
   }
 }
 

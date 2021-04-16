@@ -14,3 +14,8 @@
   margin-bottom: $tamanho-p;
   text-transform: none;
 }
+
+@mixin icone-botao {
+  background-repeat: no-repeat;
+  background-position: right $tamanho-m center;
+}

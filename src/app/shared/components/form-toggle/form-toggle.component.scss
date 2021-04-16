@@ -44,11 +44,11 @@
 
         &:hover {
           background: none;
-          color: $cor-primario;
+          color: $cor-primaria;
         }
 
         &:after {
-          background: $cor-primario;
+          background: $cor-primaria;
           content: "";
           height: 100%;
           position: absolute;

@@ -29,8 +29,8 @@
     }
 
     input:checked+label {
-      border-bottom-color: $cor-primario;
-      color: $cor-primario;
+      border-bottom-color: $cor-primaria;
+      color: $cor-primaria;
       z-index: 1;
     }
 
@@ -38,7 +38,7 @@
       border-bottom: $borda-m;
       border-bottom-color: $cor-base;
       box-sizing: border-box;
-      color: $cor-secundario;
+      color: $cor-secundaria;
       flex: 1 1 auto;
       height: 24px;
       text-align: center;
