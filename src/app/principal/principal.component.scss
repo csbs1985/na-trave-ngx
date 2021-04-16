@@ -16,13 +16,12 @@
   }
 
   &-buscar {
-    padding: $tamanho-m;
+    padding: $tamanho-g $tamanho-m;
   }
 
   &-menu {
     background-color: $cor-primaria;
-    padding: $tamanho-m;
-    padding-bottom: 0;
+    padding: $tamanho-g $tamanho-m $tamanho-m;
     width: 100%;
   }
 }

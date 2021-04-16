@@ -18,6 +18,7 @@
     letter-spacing: $espaco-letra;
     padding: 0 $tamanho-m;
     position: relative;
+    font-size: $fonte-primaria;
     text-decoration: none;
     text-transform: uppercase;
     word-spacing: $tamanho-pp;
@@ -39,6 +40,7 @@
     background-repeat: no-repeat;
     text-align: left;
     width: 100%;
+    height: $botao-tamanho;
   }
 }
 
@@ -49,7 +51,6 @@
     background-color: $cor-base;
     background-image: url('../assets/svg/seta.svg');
     color: $cor-primaria;
-    font-size: 16px;
     margin-bottom: $tamanho-m;
     text-align: left;
     width: 100%;
