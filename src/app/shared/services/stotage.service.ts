@@ -10,7 +10,7 @@ export class StotageService {
   private readonly SESSAO_CONTEXTO = 'na-trave';
 
   /**
-   * Método responsável por ler o session storage e, no caso de não haver dados nele,
+   * Método responsável por ler o local storage e, no caso de não haver dados nele,
    * criar uma estrutura de dados vazia.
    */
   get dados(): Sessao {
@@ -29,6 +29,12 @@ export class StotageService {
     } catch (error) {
       throw new Error('JSON da sessão corrompido.');
     }
+  }
+
+  limparDados(): void {
+    const defaultValue = new Sessao();
+    let store = StotageService.LOCAL_STORAGE[this.SESSAO_CONTEXTO];
+    store = defaultValue;
   }
 
   salvarDados(dados: Sessao): void {

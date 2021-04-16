@@ -8,6 +8,7 @@ import { Modal } from '../shared/models/modal.module';
 import { StoragePlacar } from '../shared/models/storage-selecionae-equipe.model';
 import { RandomService } from '../shared/services/random.service';
 import { StorageIntegracaoService } from '../shared/services/storage-intregacao.service';
+import { StotageService } from '../shared/services/stotage.service';
 
 @Component({
   selector: 'app-placar',
@@ -43,7 +44,8 @@ export class PlacarComponent implements OnInit {
     private integracaoService: StorageIntegracaoService,
     private route: Router,
     private modalService: ModalService,
-    private randomService: RandomService
+    private randomService: RandomService,
+    private sessao: StotageService
   ) { }
 
   ngOnInit(): void {
@@ -72,6 +74,10 @@ export class PlacarComponent implements OnInit {
         format: 'mm:ss'
       };
     }
+  }
+
+  cabecalhoResultado(): void {
+    this.integracaoService.salvarPlacar(null);
   }
 
   botaoIniciar(): void {

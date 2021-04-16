@@ -1,6 +1,9 @@
 <section>
   <div class="placar">
-    <app-cabecalho [cabecalhoTexto]="cabecalhoTexto"></app-cabecalho>
+    <app-cabecalho
+      [cabecalhoTexto]="cabecalhoTexto"
+      (cabecalhoResultado)="cabecalhoResultado()"
+    ></app-cabecalho>
 
     <div class="placar-caixa">
       <div class="placar-placar">

@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-cabecalho',
@@ -9,6 +9,7 @@ import { Component, Input } from '@angular/core';
 export class CabecalhoComponent {
 
   @Input() cabecalhoTexto: string;
+  @Output() cabecalhoResultado = new EventEmitter();
 
   constructor(
     private location: Location
@@ -16,5 +17,6 @@ export class CabecalhoComponent {
 
   selecionarBotao(): void {
     this.location.back();
+    this.cabecalhoResultado.emit();
   }
 }
