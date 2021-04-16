@@ -10,19 +10,15 @@
     ></div>
 
     <div class="modal-corpo">
+
+      <div class="modal-inveite"></div>
+
       <div class="modal-titulo">{{ modalObject.titulo }}</div>
 
       <div
         class="modal-texto"
         *ngIf="modalObject.texto"
       >{{ modalObject.texto }}</div>
-
-      <img
-        class="modal-fechar"
-        (click)="modalFechar()"
-        src="../../../../assets/svg/cancelar.svg"
-        alt="cancelar"
-      >
 
       <div
         class="botao modal-teclado"

@@ -8,7 +8,6 @@ import { Modal } from '../shared/models/modal.module';
 import { StoragePlacar } from '../shared/models/storage-selecionae-equipe.model';
 import { RandomService } from '../shared/services/random.service';
 import { StorageIntegracaoService } from '../shared/services/storage-intregacao.service';
-import { StotageService } from '../shared/services/stotage.service';
 
 @Component({
   selector: 'app-placar',
@@ -27,6 +26,7 @@ export class PlacarComponent implements OnInit {
   visitantePonto = 0;
   periodo = 1;
 
+  countdownConfig: any;
   modaltexto: string;
 
   modalObject: Modal = {
@@ -35,8 +35,6 @@ export class PlacarComponent implements OnInit {
     titulo: 'Finalizar'
   };
 
-  countdownConfig: any;
-
   placarSessao: StoragePlacar;
   situacaoCronometro: TipoCronometro = TipoCronometro.INICIAR;
 
@@ -44,8 +42,7 @@ export class PlacarComponent implements OnInit {
     private integracaoService: StorageIntegracaoService,
     private route: Router,
     private modalService: ModalService,
-    private randomService: RandomService,
-    private sessao: StotageService
+    private randomService: RandomService
   ) { }
 
   ngOnInit(): void {
@@ -68,8 +65,8 @@ export class PlacarComponent implements OnInit {
       this.cabecalhoTexto = this.cabecalhoTexto + ' e cronômetro';
 
       this.countdownConfig = {
-        // leftTime: 3,
-        leftTime: this.placarSessao.duracao,
+        leftTime: 3,
+        // leftTime: this.placarSessao.duracao,
         demand: true,
         format: 'mm:ss'
       };

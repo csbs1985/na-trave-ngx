@@ -9,8 +9,16 @@
     bottom: 0;
     padding: $tamanho-m;
     position: absolute;
-    width: calc(100% - 40px);
+    width: 100vw;
     z-index: 9999;
+  }
+
+  &-inveite {
+    background-color: $cor-secundaria;
+    height: $tamanho-pp;
+    width: $tamanho-g;
+    align-self: center;
+    margin: 0 auto $tamanho-m;
   }
 
   &-titulo {
@@ -18,12 +26,6 @@
     font-size: 100%;
     margin-bottom: $tamanho-m;
     width: 100%;
-  }
-
-  &-fechar {
-    position: absolute;
-    right: 20px;
-    top: 20px;
   }
 
   &-texto {
